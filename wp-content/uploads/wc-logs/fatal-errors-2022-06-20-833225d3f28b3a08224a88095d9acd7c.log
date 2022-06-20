@@ -1,0 +1,65 @@
+2022-06-20T13:30:01+00:00 CRITICAL Uncaught Error: Class "Inc\Activate" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php:80
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DmsPlugin->activate(false)
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(691): do_action('activate_dms-pl...', false)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(58): activate_plugin('dms-plugin/dms-...', 'http://localhos...', false)
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php on line 80
+
+2022-06-20T13:30:02+00:00 CRITICAL Uncaught Error: Class "Inc\Activate" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php:80
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DmsPlugin->activate('')
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(194): do_action('activate_dms-pl...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php on line 80
+
+2022-06-20T13:30:02+00:00 CRITICAL Uncaught Error: Class "Inc\Activate" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php:80
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DmsPlugin->activate('')
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(194): do_action('activate_dms-pl...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php on line 80
+
+2022-06-20T13:30:33+00:00 CRITICAL Uncaught Error: Class "Inc\Base\BaseController" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php:12
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\init.php(43): Composer\Autoload\ClassLoader->loadClass('Inc\\Base\\Enqueu...')
+#3 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\init.php(29): Inc\Init::instantiate('Inc\\Base\\Enqueu...')
+#4 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php(26): Inc\Init::register_services()
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(661): plugin_sandbox_scrape('dms-plugin/dms-...')
+#7 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(58): activate_plugin('dms-plugin/dms-...', 'http://localhos...', false)
+#8 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php on line 12
+
+2022-06-20T13:30:34+00:00 CRITICAL Uncaught Error: Class "Inc\Base\BaseController" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php:12
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\init.php(43): Composer\Autoload\ClassLoader->loadClass('Inc\\Base\\Enqueu...')
+#3 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\init.php(29): Inc\Init::instantiate('Inc\\Base\\Enqueu...')
+#4 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php(26): Inc\Init::register_services()
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('dms-plugin/dms-...')
+#7 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php on line 12
+
+2022-06-20T13:30:34+00:00 CRITICAL Uncaught Error: Class "Inc\Base\BaseController" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php:12
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\vendor\composer\ClassLoader.php(571): include()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\vendor\composer\ClassLoader.php(428): Composer\Autoload\includeFile('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\init.php(43): Composer\Autoload\ClassLoader->loadClass('Inc\\Base\\Enqueu...')
+#3 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\init.php(29): Inc\Init::instantiate('Inc\\Base\\Enqueu...')
+#4 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\dms-plugin.php(26): Inc\Init::register_services()
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('dms-plugin/dms-...')
+#7 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php on line 12
+
