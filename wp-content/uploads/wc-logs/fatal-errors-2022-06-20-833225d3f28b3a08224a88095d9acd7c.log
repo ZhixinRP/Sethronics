@@ -63,3 +63,13 @@ Stack trace:
 #7 {main}
   thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php on line 12
 
+2022-06-20T13:51:10+00:00 CRITICAL Uncaught Error: Undefined constant "Inc\Base\PLUGIN_URL" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php:15
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Base\Enqueue->enqueue('index.php')
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\admin-header.php(118): do_action('admin_enqueue_s...', 'index.php')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\index.php(137): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php on line 15
+
