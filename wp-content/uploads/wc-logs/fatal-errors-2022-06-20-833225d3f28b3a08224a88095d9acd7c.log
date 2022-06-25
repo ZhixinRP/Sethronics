@@ -73,3 +73,57 @@ Stack trace:
 #5 {main}
   thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Base\Enqueue.php on line 15
 
+2022-06-20T14:19:08+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin//templates/cpt.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php:18
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminCpt('')
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_cp...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php on line 18
+
+2022-06-20T14:19:15+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin//templates/taxonomy.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php:23
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminTaxonomy('')
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ta...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php on line 23
+
+2022-06-20T14:19:17+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin//templates/widget.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php:28
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminWidget('')
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_wi...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php on line 28
+
+2022-06-20T14:19:22+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin//templates/cpt.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php:18
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminCpt('')
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_cp...')
+#4 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php on line 18
+
+2022-06-20T14:22:19+00:00 CRITICAL Out of memory (allocated 18874368) (tried to allocate 118784 bytes) in C:\xampp\htdocs\Sethtronics\wp-content\plugins\woocommerce\includes\class-woocommerce.php on line 609
+
+2022-06-20T14:31:07+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Inc\Api\Callbacks\AdminCallbacks does not have a method "adminDeliveryPersonnel" in C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php:307
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_de...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php on line 307
+
+2022-06-20T14:39:29+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, class Inc\Api\Callbacks\AdminCallbacks does not have a method "adminOrders" in C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php:307
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_or...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php on line 307
+
