@@ -71,10 +71,12 @@ class SettingsApi
 	public function addAdminMenu()
 	{
 		foreach ($this->admin_pages as $page) {
+			// Adds a top-level menu page.
 			add_menu_page($page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], $page['callback'], $page['icon_url'], $page['position']);
 		}
 
 		foreach ($this->admin_subpages as $page) {
+			// Adds a submenu page.
 			add_submenu_page($page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], $page['callback']);
 		}
 	}
@@ -105,16 +107,19 @@ class SettingsApi
 	{
 		// register setting
 		foreach ($this->settings as $setting) {
+			//Registers a setting and its data.
 			register_setting($setting["option_group"], $setting["option_name"], (isset($setting["callback"]) ? $setting["callback"] : ''));
 		}
 
 		// add settings section
 		foreach ($this->sections as $section) {
+			// Adds a new section to a settings page.
 			add_settings_section($section["id"], $section["title"], (isset($section["callback"]) ? $section["callback"] : ''), $section["page"]);
 		}
 
 		// add settings field
 		foreach ($this->fields as $field) {
+			// Adds a new field to a section of a settings page.
 			add_settings_field($field["id"], $field["title"], (isset($field["callback"]) ? $field["callback"] : ''), $field["page"], $field["section"], (isset($field["args"]) ? $field["args"] : ''));
 		}
 	}
