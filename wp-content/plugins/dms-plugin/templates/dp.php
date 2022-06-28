@@ -1,25 +1,31 @@
 <div class="wrap">
-    <?php
-    //Wordpress to print any error responses
-    settings_errors(); ?>
-    <p class="title">Delivery Personnel Manager</p>
-    <ul class="nav nav-tabs">
-        <li class="active"><a href="#tab-1">Manage Delivery Personnel</a></li>
-        <li><a href="#tab-2">Add Delivery Personnel</a></li>
-        <li><a href="#tab-3">Export</a></li>
-    </ul>
-
-    <div class="tab-content">
-        <div id="tab-1" class="tab-pane active">
-            <h3>List of Delivery Personnels</h3>
+    <?php settings_errors(); ?>
+    <div class="title">Delivery Personnel Manager</div>
+    <div class="tabs">
+        <div class="tab-header">
+            <div class="tab active">Manage Delivery Personnel</div>
+            <div class="tab">Add Delivery Personnel</div>
+            <div class="tab">Export</div>
         </div>
-
-        <div id="tab-2" class="tab-pane">
-            <h3>Updates</h3>
-        </div>
-
-        <div id="tab-3" class="tab-pane">
-            <h3>About</h3>
+        <div class="tab-body">
+            <div class="tab-content active">
+                <h3>This is Manage Order section</h3>
+                <form method="post" action="options.php">
+                    <?php
+                    settings_fields('dms_plugin_settings');
+                    do_settings_sections('dms_plugin');
+                    submit_button();
+                    ?>
+                </form>
+            </div>
+            <div class="tab-content">
+                <h3>This is Assign Order section</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi architecto illo facere voluptate unde blanditiis temporibus incidunt. Aperiam error eius culpa, debitis eum beatae minima, molestiae, ipsum animi nulla excepturi.</p>
+            </div>
+            <div class="tab-content">
+                <h3>This is Manage Order section</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi architecto illo facere voluptate unde blanditiis temporibus incidunt. Aperiam error eius culpa, debitis eum beatae minima, molestiae, ipsum animi nulla excepturi.</p>
+            </div>
         </div>
     </div>
 </div>

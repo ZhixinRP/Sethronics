@@ -1,22 +1,15 @@
-window.addEventListener('load', function () {
-  // store tabs variables
-  var tabs = document.querySelectorAll('ul.nav-tabs > li');
+const tabs = document.querySelectorAll('.tab');
+const contents = document.querySelectorAll('.tab-content');
 
-  for (i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('click', switchTab);
-  }
-
-  function switchTab(event) {
-    event.preventDefault();
-
-    document.querySelector('ul.nav-tabs li.active').classList.remove('active');
-    document.querySelector('.tab-pane.active').classList.remove('active');
-
-    var clickedTab = event.currentTarget;
-    var anchor = event.target;
-    var activePaneID = anchor.getAttribute('href');
-
-    clickedTab.classList.add('active');
-    document.querySelector(activePaneID).classList.add('active');
-  }
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => {
+    contents.forEach((content) => {
+      content.classList.remove('active');
+    });
+    tabs.forEach((tab) => {
+      tab.classList.remove('active');
+    });
+    contents[index].classList.add('active');
+    tabs[index].classList.add('active');
+  });
 });

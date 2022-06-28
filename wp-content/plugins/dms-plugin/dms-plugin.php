@@ -15,7 +15,7 @@ Text Domain: dms-plugin
 
 // If this file is called firectly, abort!!!
 defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
-define('DMS_PLUGIN_URL', plugin_dir_url(__FILE__));
+define('PLUGIN_URL', plugin_dir_url(__FILE__));
 
 // Require once the Composer Autoload
 if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
