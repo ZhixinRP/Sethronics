@@ -45,7 +45,17 @@
             </div>
             <div class="tab-content">
                 <h3>This is Assign Order section</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi architecto illo facere voluptate unde blanditiis temporibus incidunt. Aperiam error eius culpa, debitis eum beatae minima, molestiae, ipsum animi nulla excepturi.</p>
+                <form method="post" action="<?php echo get_the_permalink(); ?>">
+                    <table class="form-table">
+                        <tbody>
+                            <tr>
+                                <th><label>Assign Order (required)</label></th>
+                                <td><?php wp_dropdown_users(array('who' => 'delivery_personnel')); ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <input type="submit" class="button" name="add" value="Add Delivery Personnel">
+                </form>
             </div>
             <div class="tab-content">
                 <h3>This is Manage Order section</h3>

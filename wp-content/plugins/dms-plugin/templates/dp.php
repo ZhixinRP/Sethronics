@@ -44,12 +44,37 @@ if (isset($_POST['add'])) {
         <div class="tab-body">
             <div class="tab-content active">
                 <?php
-                $dp_users = get_users(array(
-                    'role' => 'Delivery Personnel',
-                    'number' => 10,
-                    'orderby' => 'user_registered',
-                    'order' => 'DESC'
-                ));
+                // $dp_users = get_users(array(
+                //     'role' => 'Delivery Personnel',
+                //     'number' => 10,
+                //     'orderby' => 'user_registered',
+                //     'order' => 'DESC'
+                // ));
+                $dp_users = get_users('role=delivery_personnel');
+                echo '<table class="dp-table"><tr><th>Username</th><th>Email</th><th class="text-center">Actions</th></tr>';
+                foreach ($dp_users as $dp_user) {
+                    echo '
+                    <tr>
+                    <td>' . esc_html($dp_user->user_nicename) . '</td>
+                    <td>' . esc_html($dp_user->user_email) . '</td>
+                    <td class="text-center">
+                    ';
+
+                    echo '<form method="post" action="" class="inline-block">';
+                    echo '<input type="hidden" name="edit_taxonomy" value="">';
+                    submit_button('Edit', 'primary small', 'submit', false);
+                    echo '</form> ';
+
+                    echo '<form method="post" action="options.php" class="inline-block">';
+                    settings_fields('alecaddd_plugin_tax_settings');
+                    echo '<input type="hidden" name="remove" value="">';
+                    submit_button('Delete', 'delete small', 'submit', false, array(
+                        'onclick' => 'return confirm("Are you sure you want to delete this delivery personnel? The data associated with it will not be deleted.");'
+                    ));
+                    echo '</form></td></tr>';
+                }
+                echo '</table>';
+
                 // $dp_users = get_users(['role__in' => ['delivery_personnel']]);
 
                 // $options = get_option('dms_plugin_dp') ?: array();
@@ -59,18 +84,18 @@ if (isset($_POST['add'])) {
 
                 //     echo "<tr><td>{$dp_user['user_nicename']}</td><td>{$dp_user['user_email']}</td><td class=\"text-center\"></td><td class=\"text-center\">";
 
-                //     echo '<form method="post" action="" class="inline-block">';
-                //     echo '<input type="hidden" name="edit_taxonomy" value="' . $option['taxonomy'] . '">';
-                //     submit_button('Edit', 'primary small', 'submit', false);
-                //     echo '</form> ';
+                // echo '<form method="post" action="" class="inline-block">';
+                // echo '<input type="hidden" name="edit_taxonomy" value="' . $option['taxonomy'] . '">';
+                // submit_button('Edit', 'primary small', 'submit', false);
+                // echo '</form> ';
 
-                //     echo '<form method="post" action="options.php" class="inline-block">';
-                //     settings_fields('alecaddd_plugin_tax_settings');
-                //     echo '<input type="hidden" name="remove" value="' . $option['taxonomy'] . '">';
-                //     submit_button('Delete', 'delete small', 'submit', false, array(
-                //         'onclick' => 'return confirm("Are you sure you want to delete this Custom Taxonomy? The data associated with it will not be deleted.");'
-                //     ));
-                //     echo '</form></td></tr>';
+                // echo '<form method="post" action="options.php" class="inline-block">';
+                // settings_fields('alecaddd_plugin_tax_settings');
+                // echo '<input type="hidden" name="remove" value="' . $option['taxonomy'] . '">';
+                // submit_button('Delete', 'delete small', 'submit', false, array(
+                //     'onclick' => 'return confirm("Are you sure you want to delete this Custom Taxonomy? The data associated with it will not be deleted.");'
+                // ));
+                // echo '</form></td></tr>';
                 // }
 
                 // echo '</table>';

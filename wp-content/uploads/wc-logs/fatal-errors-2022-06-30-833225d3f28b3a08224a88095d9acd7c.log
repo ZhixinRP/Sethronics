@@ -164,3 +164,13 @@ Stack trace:
 #5 {main}
   thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 49
 
+2022-06-30T12:34:53+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:73
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 73
+
