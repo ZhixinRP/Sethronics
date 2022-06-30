@@ -39,7 +39,7 @@ class OrdersController extends BaseController
                 'parent_slug' => 'dms_plugin',
                 'page_title' => 'Orders',
                 'menu_title' => 'Orders',
-                'capability' => 'manage_options',
+                'capability' => 'manage_admin_orders',
                 'menu_slug' => 'dms_orders',
                 'callback' => array($this->callbacks, 'adminOrders')
             )

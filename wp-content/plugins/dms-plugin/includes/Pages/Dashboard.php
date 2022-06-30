@@ -48,7 +48,7 @@ class Dashboard extends BaseController
 			array(
 				'page_title' => 'DMS Plugin',
 				'menu_title' => 'DMS',
-				'capability' => 'manage_options',
+				'capability' => 'manage_admin_dashboard',
 				'menu_slug' => 'dms_plugin',
 				//grabs the scripts, html,php etc..
 				'callback' => array($this->callbacks, 'adminDashboard'),

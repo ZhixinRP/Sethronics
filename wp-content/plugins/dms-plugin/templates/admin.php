@@ -1,5 +1,7 @@
 <div class="dashboard">
-    <p class="db-title">Delivery Management System</p>
+    <p class="db-title">Delivery Management System<br />
+        <?php $user = wp_get_current_user();
+        echo "Welcome, " . $user->display_name ?></p>
     <div class="item-container">
         <a href="admin.php?page=dms_dp">
             <div class="item">

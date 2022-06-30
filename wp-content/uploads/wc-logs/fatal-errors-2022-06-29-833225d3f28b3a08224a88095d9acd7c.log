@@ -1,0 +1,20 @@
+2022-06-29T06:32:03+00:00 CRITICAL Uncaught TypeError: Illegal offset type in C:\xampp\htdocs\Sethtronics\wp-admin\includes\template.php:1666
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\SettingsApi.php(123): add_settings_field('full_name', 'Full Name:', Array, 'dms_dp', Array)
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\SettingsApi->registerCustomFields('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(175): do_action('admin_init')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-admin\includes\template.php on line 1666
+
+2022-06-29T13:09:05+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 19
+

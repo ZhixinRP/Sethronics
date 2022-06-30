@@ -38,9 +38,9 @@ class DeliveryPersonnelController extends BaseController
 
         $this->setSettings();
 
-        $this->setSections();
+        // $this->setSections();
 
-        $this->setFields();
+        // $this->setFields();
 
         $this->settings->addSubPages($this->subpages)->register();
     }
@@ -52,7 +52,7 @@ class DeliveryPersonnelController extends BaseController
                 'parent_slug' => 'dms_plugin',
                 'page_title' => 'DP Manager',
                 'menu_title' => 'DP Manager',
-                'capability' => 'manage_options',
+                'capability' => 'manage_admin_dp',
                 'menu_slug' => 'dms_dp',
                 'callback' => array($this->callbacks, 'adminDP')
             )
@@ -72,49 +72,61 @@ class DeliveryPersonnelController extends BaseController
         $this->settings->setSettings($args);
     }
 
-    public function setSections()
-    {
-        $args = array(
-            array(
-                'id' => 'dms_dp_index',
-                'title' => 'Delivery Peronnel Manager',
-                'callback' => array($this->dp_callbacks, 'dpSectionManager'),
-                'page' => 'dms_dp'
-            )
-        );
+    // public function setSections()
+    // {
+    //     $args = array(
+    //         array(
+    //             'id' => 'dms_add_dp',
+    //             'title' => 'Add Delivery Personnel',
+    //             // 'callback' => array($this->dp_callbacks, 'dpSectionManager'),
+    //             'page' => 'dms_dp'
+    //         )
+    //     );
 
-        $this->settings->setSections($args);
-    }
+    //     $this->settings->setSections($args);
+    // }
 
-    public function setFields()
-    {
-        $args = array(
-            array(
-                'id' => 'full_name',
-                'title' => 'Full Name:',
-                'callback' => array($this->dp_callbacks, 'textField'),
-                'page' => 'dms_dp',
-                'section' => 'dms_dp_index',
-                'args' => array(
-                    'option_name' => 'dms_plugin_dp',
-                    'label_for' => 'full_name',
-                    'placeholder' => 'eg. Liu Zhixin'
-                )
-            ),
-            array(
-                'id' => 'phone_number',
-                'title' => 'Phone Number:',
-                'callback' => array($this->dp_callbacks, 'textField'),
-                'page' => 'dms_dp',
-                'section' => 'dms_dp_index',
-                'args' => array(
-                    'option_name' => 'dms_plugin_dp',
-                    'label_for' => 'phone_number',
-                    'placeholder' => 'eg. 87654321'
-                )
-            )
-        );
+    // public function setFields()
+    // {
+    //     $args = array(
+    //         array(
+    //             'id' => 'username',
+    //             'title' => 'Username (required)',
+    //             'callback' => array($this->dp_callbacks, 'textField'),
+    //             'page' => 'dms_dp',
+    //             'section' => 'dms_add_dp',
+    //             'args' => array(
+    //                 'option_name' => 'dms_plugin_dp',
+    //                 'label_for' => 'username',
+    //                 'placeholder' => 'eg. Liu Zhixin'
+    //             )
+    //         ),
+    //         array(
+    //             'id' => 'password',
+    //             'title' => 'Passsword (required)',
+    //             'callback' => array($this->dp_callbacks, 'textField'),
+    //             'page' => 'dms_dp',
+    //             'section' => 'dms_add_dp',
+    //             'args' => array(
+    //                 'option_name' => 'dms_plugin_dp',
+    //                 'label_for' => 'phone_number',
+    //                 'placeholder' => 'eg. 87654321'
+    //             )
+    //         ),
+    //         array(
+    //             'id' => 'phone_number',
+    //             'title' => 'Phone Number:',
+    //             'callback' => array($this->dp_callbacks, 'textField'),
+    //             'page' => 'dms_dp',
+    //             'section' => 'dms_add_dp',
+    //             'args' => array(
+    //                 'option_name' => 'dms_plugin_dp',
+    //                 'label_for' => 'phone_number',
+    //                 'placeholder' => 'eg. 87654321'
+    //             )
+    //         )
+    //     );
 
-        $this->settings->setFields($args);
-    }
+    //     $this->settings->setFields($args);
+    // }
 }

@@ -89,19 +89,19 @@ class SettingsApi
 		return $this;
 	}
 
-	public function setSections(array $sections)
-	{
-		$this->sections = $sections;
+	// public function setSections(array $sections)
+	// {
+	// 	$this->sections = $sections;
 
-		return $this;
-	}
+	// 	return $this;
+	// }
 
-	public function setFields(array $fields)
-	{
-		$this->fields = $fields;
+	// public function setFields(array $fields)
+	// {
+	// 	$this->fields = $fields;
 
-		return $this;
-	}
+	// 	return $this;
+	// }
 
 	public function registerCustomFields()
 	{
@@ -111,16 +111,16 @@ class SettingsApi
 			register_setting($setting["option_group"], $setting["option_name"], (isset($setting["callback"]) ? $setting["callback"] : ''));
 		}
 
-		// add settings section
-		foreach ($this->sections as $section) {
-			// Adds a new section to a settings page.
-			add_settings_section($section["id"], $section["title"], (isset($section["callback"]) ? $section["callback"] : ''), $section["page"]);
-		}
+		// // add settings section
+		// foreach ($this->sections as $section) {
+		// 	// Adds a new section to a settings page.
+		// 	add_settings_section($section["id"], $section["title"], (isset($section["callback"]) ? $section["callback"] : ''), $section["page"]);
+		// }
 
-		// add settings field
-		foreach ($this->fields as $field) {
-			// Adds a new field to a section of a settings page.
-			add_settings_field($field["id"], $field["title"], (isset($field["callback"]) ? $field["callback"] : ''), $field["page"], $field["section"], (isset($field["args"]) ? $field["args"] : ''));
-		}
+		// // add settings field
+		// foreach ($this->fields as $field) {
+		// 	// Adds a new field to a section of a settings page.
+		// 	add_settings_field($field["id"], $field["title"], (isset($field["callback"]) ? $field["callback"] : ''), $field["page"], $field["section"], (isset($field["args"]) ? $field["args"] : ''));
+		// }
 	}
 }

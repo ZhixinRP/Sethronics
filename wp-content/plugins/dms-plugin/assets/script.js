@@ -13,3 +13,8 @@ tabs.forEach((tab, index) => {
     tabs[index].classList.add('active');
   });
 });
+
+function hideAlert() {
+  document.getElementById('alert').style.display = 'none';
+}
+setTimeout(hideAlert, 3000);

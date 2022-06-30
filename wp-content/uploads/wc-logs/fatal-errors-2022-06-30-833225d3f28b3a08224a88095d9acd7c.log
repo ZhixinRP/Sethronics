@@ -1,0 +1,166 @@
+2022-06-30T08:11:04+00:00 CRITICAL syntax error, unexpected token "}", expecting variable or "{" or "$" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 5
+
+2022-06-30T08:16:41+00:00 CRITICAL syntax error, unexpected token "}", expecting variable or "{" or "$" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 5
+
+2022-06-30T08:19:36+00:00 CRITICAL syntax error, unexpected token "}", expecting variable or "{" or "$" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 5
+
+2022-06-30T09:53:24+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 55
+
+2022-06-30T09:54:26+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 55
+
+2022-06-30T09:55:22+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 55
+
+2022-06-30T09:59:24+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:58
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 58
+
+2022-06-30T10:00:08+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:58
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 58
+
+2022-06-30T10:01:20+00:00 CRITICAL Uncaught Error: Object of class WP_User could not be converted to string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 50
+
+2022-06-30T10:01:32+00:00 CRITICAL Uncaught Error: Object of class WP_User could not be converted to string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 50
+
+2022-06-30T10:01:44+00:00 CRITICAL Uncaught Error: Object of class WP_User could not be converted to string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 50
+
+2022-06-30T10:01:47+00:00 CRITICAL Uncaught Error: Object of class WP_User could not be converted to string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 50
+
+2022-06-30T10:07:40+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 55
+
+2022-06-30T10:19:30+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:55
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 55
+
+2022-06-30T11:02:51+00:00 CRITICAL Uncaught Error: Cannot use object of type WP_User as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:54
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 54
+
+2022-06-30T11:53:26+00:00 CRITICAL Uncaught Error: Object of class stdClass could not be converted to string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 49
+
+2022-06-30T11:53:56+00:00 CRITICAL Uncaught Error: Cannot use object of type stdClass as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 49
+
+2022-06-30T11:55:33+00:00 CRITICAL Uncaught Error: Cannot use object of type stdClass as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 49
+
+2022-06-30T11:55:35+00:00 CRITICAL Uncaught Error: Cannot use object of type stdClass as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:49
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 49
+

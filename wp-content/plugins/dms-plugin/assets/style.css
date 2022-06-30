@@ -11,6 +11,7 @@ a:active, a:focus {
 }
 
 .db-title {
+    text-align: center;
     font-size: 3rem;
     font-weight: 600;
 }
@@ -104,4 +105,19 @@ a:active, a:focus {
 
 .tab-body > .tab-content.active {
     display: block;
+}
+
+.alert {
+    text-align: center;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.alert-success {
+    background-color: green;
+}
+.alert-fail {
+    background-color: red;
 }
