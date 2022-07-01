@@ -1,0 +1,10 @@
+2022-07-01T14:10:24+00:00 CRITICAL Uncaught Error: Call to a member function prepare() on null in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php:45
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\includes\Api\Callbacks\AdminCallbacks.php(20): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Inc\Api\Callbacks\AdminCallbacks->adminDP('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms-plugin\templates\dp.php on line 45
+
