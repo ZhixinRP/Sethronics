@@ -75,7 +75,8 @@ class Plugin_Name_Admin
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/plugin-name-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/dms-admin.css', array(), rand(111, 9999), 'all');
+		// wp_enqueue_style('bootstrap-css', plugin_dir_url(__FILE__) . 'css/bootstrap.min.css', array(), rand(111, 9999), 'all');
 	}
 
 	/**
@@ -98,6 +99,56 @@ class Plugin_Name_Admin
 		 * class.
 		 */
 
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/plugin-name-admin.js', array('jquery'), $this->version, false);
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/dms-admin.js', array(), rand(111, 9999), 'all');
+		// wp_enqueue_script('bootstrap-js', plugin_dir_url(__FILE__) . 'js/bootstrap.min.js', array(), rand(111, 9999), 'all');
+	}
+
+	//add custom menu
+	public function my_admin_menu()
+	{
+		//ADMIN SECTION
+		add_menu_page('DMS', 'DMS', 'manage_admin_dashboard', 'dms_plugin', array($this, 'dms_admin_page'), 'dashicons-car', 250);
+		//Add Dashboard sub page replaces menu page
+		add_submenu_page('dms_plugin', 'Dashboard', 'Dashboard', 'manage_admin_dashboard', 'dms_plugin', array($this, 'dms_admin_dashboard'));
+		add_submenu_page('dms_plugin', 'DP Manager', 'DP Manager', 'manage_admin_dp', 'dms_admin_dp', array($this, 'dms_admin_dp'));
+		add_submenu_page('dms_plugin', 'Order Manager', 'Order Manager', 'manage_admin_orders', 'dms_admin_orders', array($this, 'dms_admin_orders'));
+
+		//DELIVERY PERSONNEL SECTION
+		add_menu_page('DMS', 'DMS', 'manage_dp_dashboard', 'dms_plugin_dp', array($this, 'dms_dp_page'), 'dashicons-car', 250);
+		add_submenu_page('dms_plugin_dp', 'Dashboard', 'Dashboard', 'manage_dp_dashboard', 'dms_plugin_dp', array($this, 'dms_dp_dashboard'));
+		add_submenu_page('dms_plugin_dp', 'Orders', 'Orders', 'manage_dp_orders', 'dms_dp_orders', array($this, 'dms_dp_orders'));
+
+		if (current_user_can('administrator')) {
+			remove_menu_page('dms_plugin_dp');
+		}
+	}
+	//callbacks
+	public function dms_admin_page()
+	{
+		require_once 'partials/dms-admin-dashboard.php';
+	}
+	public function dms_admin_dashboard()
+	{
+		require_once 'partials/dms-admin-dashboard.php';
+	}
+	public function dms_admin_dp()
+	{
+		require_once 'partials/dms-admin-dp.php';
+	}
+	public function dms_admin_orders()
+	{
+		require_once 'partials/dms-admin-orders.php';
+	}
+	public function	dms_dp_page()
+	{
+		require_once 'partials/dms-dp-dashboard.php';
+	}
+	public function	dms_dp_dashboard()
+	{
+		require_once 'partials/dms-dp-dashboard.php';
+	}
+	public function	dms_dp_orders()
+	{
+		require_once 'partials/dms-dp-orders.php';
 	}
 }
