@@ -70,7 +70,7 @@ class DMS
 	public function __construct()
 	{
 		if (defined('PLUGIN_NAME_VERSION')) {
-			$this->version = DMS_VERSION;
+			$this->version = PLUGIN_NAME_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
@@ -124,7 +124,7 @@ class DMS
 		 */
 		require_once plugin_dir_path(dirname(__FILE__)) . 'public/class-dms-public.php';
 
-		$this->loader = new DMS_Loader();
+		$this->loader = new Plugin_Name_Loader();
 	}
 
 	/**
@@ -154,13 +154,10 @@ class DMS
 	private function define_admin_hooks()
 	{
 
-		$plugin_admin = new DMS_Admin($this->get_plugin_name(), $this->get_version());
+		$plugin_admin = new Plugin_Name_Admin($this->get_plugin_name(), $this->get_version());
 
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
-
-		//add admin menu items
-		$this->loader->add_action('admin_menu', $plugin_admin, 'my_admin_menu');
 	}
 
 	/**

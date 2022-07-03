@@ -20,7 +20,7 @@
  * @subpackage Plugin_Name/admin
  * @author     Your Name <email@example.com>
  */
-class DMS_Admin
+class Plugin_Name_Admin
 {
 
 	/**
@@ -75,7 +75,7 @@ class DMS_Admin
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/dms-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/plugin-name-admin.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -98,17 +98,6 @@ class DMS_Admin
 		 * class.
 		 */
 
-		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/dms-admin.js', array('jquery'), $this->version, false);
-	}
-
-	public function my_admin_menu()
-	{
-		add_menu_page('Admin Dashboard', 'DMS', 'manage_options', 'dms_plugin', array($this, 'myplugin_admin_page'), 'dashicons-car', 250);
-		// add_submenu_page('wp10test/wp10settingsgeneral.php', 'Sub 1', 'WP10 Importer', 'manage_options', 'wp10test/wp10importer.php', array($this, 'wp10importercall'));
-	}
-	public function myplugin_admin_page()
-	{
-		//return views
-		require_once 'partials/dms-admin-dashboard.php';
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/plugin-name-admin.js', array('jquery'), $this->version, false);
 	}
 }

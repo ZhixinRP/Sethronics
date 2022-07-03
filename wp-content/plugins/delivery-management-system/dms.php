@@ -10,11 +10,10 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           Plugin_Name
+ * @package           DmsPlugin
  *
  * @wordpress-plugin
  * Plugin Name:       Delivery Management System
- * Plugin URI:        http://example.com/plugin-name-uri/
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
  * Version:           1.0.0
  * Author:            Zhixin
@@ -75,10 +74,10 @@ require plugin_dir_path(__FILE__) . 'includes/class-dms.php';
  *
  * @since    1.0.0
  */
-function run_dms()
+function run_plugin_name()
 {
 
 	$plugin = new DMS();
 	$plugin->run();
 }
-run_dms();
+run_plugin_name();
