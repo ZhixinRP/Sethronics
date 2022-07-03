@@ -3,7 +3,7 @@
         'name' => 'zhixin/dms-plugin',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '8c1390b072947aea1924486dbbae674973624175',
+        'reference' => 'f61621fa72c964d81d785924f4f1a9b2870a9aec',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'zhixin/dms-plugin' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '8c1390b072947aea1924486dbbae674973624175',
+            'reference' => 'f61621fa72c964d81d785924f4f1a9b2870a9aec',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

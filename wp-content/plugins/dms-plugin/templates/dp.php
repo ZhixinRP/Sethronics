@@ -1,5 +1,4 @@
 <?php
-
 if (isset($_POST['add'])) {
     //prevent SQL injection
     global $wpdb;
@@ -45,6 +44,12 @@ if (isset($_POST['edit_dp'])) {
     $_SESSION["ID"] = $edit_id;
 }
 
+if (isset($_POST['delete_dp'])) {
+    $delete_dp = get_user_by('ID', $_POST['delete_dp']);
+    $delete_id =  esc_html($delete_dp->ID);
+    wp_delete_user($delete_id);
+}
+
 if (isset($_POST['edit'])) {
     global $wpdb;
     $username = $wpdb->escape($_POST['username']);
@@ -78,6 +83,7 @@ if (isset($_POST['edit'])) {
         echo "<p id='alert' class='alert alert-fail'>Password does not match! Please Retry</p>";
     }
 }
+
 ?>
 
 <div class="wrap">
@@ -90,54 +96,35 @@ if (isset($_POST['edit'])) {
         </div>
         <div class="tab-body">
             <div class="tab-content <?php echo !isset($_POST['edit_dp']) ? 'active' : '' ?>">
-                <?php
-                $dp_users = get_users('role=delivery_personnel');
-                echo '<table class="dp-table"><tr><th>Username</th><th>Email</th><th class="text-center">Actions</th></tr>';
-                foreach ($dp_users as $dp_user) {
-                    echo '
-                    <tr>
-                    <td>' . esc_html($dp_user->user_nicename) . '</td>
-                    <td>' . esc_html($dp_user->user_email) . '</td>
-                    <td class="text-center">
-                    ';
+                <h3>Delivery Personnel List</h3>
+                <table class="table">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        $dp_users = get_users('role=delivery_personnel');
+                        foreach ($dp_users as $dp_user) {
+                            echo '<tr>
+                            <td>' . esc_html($dp_user->user_nicename) . '</td>
+                            <td>' . esc_html($dp_user->user_email) . '</td>
+                            <td class="flex">';
 
-                    echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                    echo '<input type="hidden" name="edit_dp" value="' . esc_html($dp_user->ID) . '">';
-                    echo '<input type="submit" class="button" value="Edit" />';
-                    echo '</form>';
+                            echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
+                            echo '<button type="submit" name="edit_dp" class="edit btn btn-primary" value="' . esc_html($dp_user->ID) . '">Edit</button>';
+                            echo '</form>';
 
-                    echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                    echo '<input type="hidden" name="delete_dp" value="' . esc_html($dp_user->ID) . '">';
-                    echo '<input type="submit" class="button" value="Delete" />';
-                    echo '</form></td></tr>';
-                }
-                echo '</table>';
-
-                // $dp_users = get_users(['role__in' => ['delivery_personnel']]);
-
-                // $options = get_option('dms_plugin_dp') ?: array();
-                // echo '<table class="dp-table"><tr><th>Username</th><th>Email</th><th class="text-center">Actions</th></tr>';
-
-                // foreach ($dp_users as $dp_user) {
-
-                //     echo "<tr><td>{$dp_user['user_nicename']}</td><td>{$dp_user['user_email']}</td><td class=\"text-center\"></td><td class=\"text-center\">";
-
-                // echo '<form method="post" action="" class="inline-block">';
-                // echo '<input type="hidden" name="edit_taxonomy" value="' . $option['taxonomy'] . '">';
-                // submit_button('Edit', 'primary small', 'submit', false);
-                // echo '</form> ';
-
-                // echo '<form method="post" action="options.php" class="inline-block">';
-                // settings_fields('alecaddd_plugin_tax_settings');
-                // echo '<input type="hidden" name="remove" value="' . $option['taxonomy'] . '">';
-                // submit_button('Delete', 'delete small', 'submit', false, array(
-                //     'onclick' => 'return confirm("Are you sure you want to delete this Custom Taxonomy? The data associated with it will not be deleted.");'
-                // ));
-                // echo '</form></td></tr>';
-                // }
-
-                // echo '</table>';
-                ?>
+                            echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
+                            echo '<button type="submit" name="delete_dp" class="delete btn btn-danger" value="' . esc_html($dp_user->ID) . '");">Delete</button>';
+                            echo '</form></td></tr>';
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
             <div class="tab-content <?php echo isset($_POST['edit_dp']) ? 'active' : '' ?>">
                 <h3><?php echo isset($_POST['edit_dp']) ? 'Edit' : 'Add' ?> Delivery Personnel</h3>
@@ -170,7 +157,7 @@ if (isset($_POST['edit'])) {
                             </tr>
                         </tbody>
                     </table>
-                    <p><input type="submit" class="button" name="<?php echo isset($_POST['edit_dp']) ? 'edit' : 'add' ?>" value="<?php echo isset($_POST['edit_dp']) ? 'Edit' : 'Add' ?> Delivery Personnel"></p>
+                    <button type="submit" class="btn btn-outline-primary" name="<?php echo isset($_POST['edit_dp']) ? 'edit' : 'add' ?>"><?php echo isset($_POST['edit_dp']) ? 'Edit' : 'Add' ?> Delivery Personnel</button>
                 </form>
             </div>
             <div class="tab-content">

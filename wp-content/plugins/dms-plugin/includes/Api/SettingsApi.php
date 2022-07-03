@@ -72,13 +72,26 @@ class SettingsApi
 	{
 		foreach ($this->admin_pages as $page) {
 			// Adds a top-level menu page.
-			add_menu_page($page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], $page['callback'], $page['icon_url'], $page['position']);
+			$menu = add_menu_page($page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], $page['callback'], $page['icon_url'], $page['position']);
+			add_action('load-' . $menu, "load_scripts");
 		}
 
 		foreach ($this->admin_subpages as $page) {
 			// Adds a submenu page.
-			add_submenu_page($page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], $page['callback']);
+			$submenu = add_submenu_page($page['parent_slug'], $page['page_title'], $page['menu_title'], $page['capability'], $page['menu_slug'], $page['callback']);
+			add_action('load-' . $submenu, "load_scripts");
 		}
+	}
+
+	function load_scripts()
+	{
+		add_action('admin_enqueue_scripts', 'enqueue_bootstrap');
+	}
+
+	function enqueue_bootstrap()
+	{
+		wp_enqueue_style('bs_style', $this->plugin_url . 'node_modules/bootstrap/dist/css/bootstrap.min.css', array(), rand(111, 9999), 'all');
+		wp_enqueue_script('bs_script', $this->plugin_url . 'node_modules/bootstrap/dist/js/bootstrap.min.js', array(), rand(111, 9999), 'all');
 	}
 
 	//setters methods

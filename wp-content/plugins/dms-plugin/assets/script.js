@@ -1,3 +1,23 @@
+(function ($) {
+  // $('.delete').click(function () {
+  //   alert('delete clicked');
+  // });
+  // $('.edit').click(function () {
+  //   alert('edit clicked');
+  // });
+  $('.delete').click(function (e) {
+    if (
+      !confirm(
+        'Are you sure you want to delete user ID: ' + $('.delete').attr('id')
+      )
+    ) {
+      e.preventDefault();
+      return false;
+    }
+    return true;
+  });
+})(jQuery);
+
 const tabs = document.querySelectorAll('.tab');
 const contents = document.querySelectorAll('.tab-content');
 

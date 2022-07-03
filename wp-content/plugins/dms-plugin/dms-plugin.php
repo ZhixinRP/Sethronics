@@ -14,7 +14,7 @@ Text Domain: dms-plugin
 */
 
 // If this file is called firectly, abort!!!
-defined('ABSPATH') or die('Hey, what are you doing here? You silly human!');
+defined('ABSPATH') or die('You are not allowed access!');
 define('PLUGIN_URL', plugin_dir_url(__FILE__));
 
 // Require once the Composer Autoload

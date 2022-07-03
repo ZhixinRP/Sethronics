@@ -1,0 +1,101 @@
+2022-07-03T07:14:29+00:00 CRITICAL Uncaught TypeError: call_user_func_array(): Argument #1 ($callback) must be a valid callback, function "load_scripts" not found or invalid function name in C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php:307
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#2 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(237): do_action('load-toplevel_p...')
+#3 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php on line 307
+
+2022-07-03T07:16:15+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system/public/class-dms-public.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php:125
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php(79): DMS->load_dependencies()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(661): plugin_sandbox_scrape('delivery-manage...')
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(58): activate_plugin('delivery-manage...', 'http://localhos...', false)
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php on line 125
+
+2022-07-03T07:16:16+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system/public/class-dms-public.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php:125
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php(79): DMS->load_dependencies()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('delivery-manage...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php on line 125
+
+2022-07-03T07:16:16+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system/public/class-dms-public.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php:125
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php(79): DMS->load_dependencies()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('delivery-manage...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\includes\class-dms.php on line 125
+
+2022-07-03T07:20:27+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms/public/class-dms-public.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php:125
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php(79): DMS->load_dependencies()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(661): plugin_sandbox_scrape('dms/dms.php')
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(58): activate_plugin('dms/dms.php', 'http://localhos...', false)
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php on line 125
+
+2022-07-03T07:20:29+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms/public/class-dms-public.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php:125
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php(79): DMS->load_dependencies()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('dms/dms.php')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php on line 125
+
+2022-07-03T07:20:29+00:00 CRITICAL Uncaught Error: Failed opening required 'C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms/public/class-dms-public.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php:125
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php(79): DMS->load_dependencies()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('dms/dms.php')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php on line 125
+
+2022-07-03T07:21:45+00:00 CRITICAL Uncaught Error: Class "Plugin_Name_Admin" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php:157
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php(81): DMS->define_admin_hooks()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(661): plugin_sandbox_scrape('dms/dms.php')
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(58): activate_plugin('dms/dms.php', 'http://localhos...', false)
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php on line 157
+
+2022-07-03T07:21:46+00:00 CRITICAL Uncaught Error: Class "Plugin_Name_Admin" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php:157
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php(81): DMS->define_admin_hooks()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('dms/dms.php')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php on line 157
+
+2022-07-03T07:21:46+00:00 CRITICAL Uncaught Error: Class "Plugin_Name_Admin" not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php:157
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php(81): DMS->define_admin_hooks()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(81): DMS->__construct()
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\dms.php(84): run_dms()
+#3 C:\xampp\htdocs\Sethtronics\wp-admin\includes\plugin.php(2313): include_once('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\plugins.php(192): plugin_sandbox_scrape('dms/dms.php')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dms\includes\class-dms.php on line 157
+
