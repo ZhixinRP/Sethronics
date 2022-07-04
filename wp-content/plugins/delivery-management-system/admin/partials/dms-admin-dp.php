@@ -114,8 +114,8 @@ if (isset($_POST['edit'])) {
         <div class="tab-body">
             <div class="tab-content <?php echo !isset($_POST['edit_dp']) ? 'active' : '' ?>">
                 <div class="sub-title">Delivery Personnel List</div>
-                <table class="table">
-                    <thead class="table-dark">
+                <table class="table table-bordered">
+                    <thead class="table-dark table-bordered">
                         <tr>
                             <th>User Login</th>
                             <th>Username</th>

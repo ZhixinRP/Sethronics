@@ -121,6 +121,15 @@ class Plugin_Name_Admin
 		if (current_user_can('administrator')) {
 			remove_menu_page('dms_plugin_dp');
 		}
+
+		if (current_user_can('delivery_personnel')) {
+			if (defined('IS_PROFILE_PAGE')) {
+				wp_redirect(admin_url());
+				exit;
+			}
+			remove_submenu_page('users.php', 'profile.php');
+			remove_menu_page('profile.php');
+		}
 	}
 	//callbacks
 	public function dms_admin_page()

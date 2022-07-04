@@ -45,7 +45,8 @@ define('DMS_VERSION', '1.0.0');
 function activate_dms()
 {
 	require_once plugin_dir_path(__FILE__) . 'includes/class-dms-activator.php';
-	DMS_Activator::activate();
+	$activator = new DMS_Activator();
+	$activator->activate();
 }
 
 /**
@@ -55,7 +56,8 @@ function activate_dms()
 function deactivate_dms()
 {
 	require_once plugin_dir_path(__FILE__) . 'includes/class-dms-deactivator.php';
-	DMS_Deactivator::deactivate();
+	$deactivator = new DMS_Deactivator();
+	$deactivator->deactivate();
 }
 
 register_activation_hook(__FILE__, 'activate_dms');
