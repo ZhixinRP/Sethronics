@@ -38,6 +38,7 @@ foreach ($orders as $order) {
                         <tr>
                             <th>Order ID</th>
                             <th>Order Name</th>
+                            <th>Company</th>
                             <th>Address</th>
                         </tr>
                     </thead>
@@ -45,11 +46,13 @@ foreach ($orders as $order) {
                         <?php
                         $orders = wc_get_orders(array('status' => 'completed'));
                         foreach ($orders as $order) {
-                            $oder_data = $order->get_data();
+                            $order_data = $order->get_data();
+                            $order_shipping_address = $order_data['shipping']['address_1'].''.$order_data['shipping']['address_2'].' '.$order_data['shipping']['country'].' '.$order_date['shipping']['postcode'];
                             echo '<tr>
                             <td>' . esc_html($order->id) . '</td>
-                            <td>' . esc_html($oder_data['shipping_address_1']) . '</td>
-                            <td>' . esc_html($oder_data['billing']['address_1']. ', '.$oder_data['billing']['address_2'].' '.$oder_data['billing']['shipping_city'.', '.$oder_data['billing']['city'].''.$oder_data['billing']['state'].' '.$oder_data['billing']['postcode']]) . '</td>
+                            <td>' . esc_html($order_data['shipping']['first_name'].' '.$order_data['shipping']['last_name']) . '</td>
+                            <td>' . esc_html($order_data['shipping']['company']) . '</td>
+                            <td>' . esc_html($order_shipping_address) . '</td>
                             <td class="flex">';
 
                             echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
