@@ -38,19 +38,18 @@ foreach ($orders as $order) {
                         <tr>
                             <th>Order ID</th>
                             <th>Order Name</th>
-                            <th>Address 1</th>
-                            <th>Address 2</th>
+                            <th>Address</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $orders = wc_get_orders(array('status' => 'completed'));
                         foreach ($orders as $order) {
+                            $oder_data = $order->get_data();
                             echo '<tr>
                             <td>' . esc_html($order->id) . '</td>
-                            <td>' . esc_html($order->billing) . '</td>
-                            <td>' . esc_html($order->address_1) . '</td>
-                            <td>' . esc_html($order->address_2) . '</td>
+                            <td>' . esc_html($oder_data['shipping_address_1']) . '</td>
+                            <td>' . esc_html($oder_data['billing']['address_1']. ', '.$oder_data['billing']['address_2'].' '.$oder_data['billing']['shipping_city'.', '.$oder_data['billing']['city'].''.$oder_data['billing']['state'].' '.$oder_data['billing']['postcode']]) . '</td>
                             <td class="flex">';
 
                             echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
