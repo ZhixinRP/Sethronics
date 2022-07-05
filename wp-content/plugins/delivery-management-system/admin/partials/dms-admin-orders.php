@@ -15,6 +15,30 @@ $orders = wc_get_orders(array('status' => 'completed'));
 foreach ($orders as $order) {
     echo $order;
 }
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "Sethtronics";
+
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql = "SELECT * FROM wp_wc_orders";
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+  }
+} else {
+  echo "0 results";
+}
+$conn->close();
+
 ?>
 
 
@@ -37,7 +61,7 @@ foreach ($orders as $order) {
                     <thead class="table-dark table-bordered">
                         <tr>
                             <th>Order ID</th>
-                            <th>Order Name</th>
+                            <th>Customer Name</th>
                             <th>Company</th>
                             <th>Address</th>
                         </tr>
@@ -47,16 +71,16 @@ foreach ($orders as $order) {
                         $orders = wc_get_orders(array('status' => 'completed'));
                         foreach ($orders as $order) {
                             $order_data = $order->get_data();
-                            $order_shipping_address = $order_data['shipping']['address_1'].''.$order_data['shipping']['address_2'].' '.$order_data['shipping']['country'].' '.$order_date['shipping']['postcode'];
+                            $order_shipping_address = $order_data['shipping']['address_1'].' '.$order_data['shipping']['address_2'].', '.$order_data['shipping']['country'].' '.$order_data['shipping']['city']?: ''.' '.$order_data['shipping']['state']?: ''.' '.$order_data['shipping']['postcode'];
                             echo '<tr>
                             <td>' . esc_html($order->id) . '</td>
                             <td>' . esc_html($order_data['shipping']['first_name'].' '.$order_data['shipping']['last_name']) . '</td>
-                            <td>' . esc_html($order_data['shipping']['company']) . '</td>
+                            <td>' . esc_html($order_data['shipping']['company'] ?: '-') . '</td>
                             <td>' . esc_html($order_shipping_address) . '</td>
                             <td class="flex">';
 
                             echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            echo '<button type="submit" name="" class="edit btn btn-primary" value="">Edit</button>';
+                            echo '<button type="submit" name="" class="edit btn btn-primary" value="">Assign</button>';
                             echo '</form>';
 
                             echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
