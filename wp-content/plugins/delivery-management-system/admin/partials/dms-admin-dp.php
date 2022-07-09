@@ -177,7 +177,7 @@ if (isset($_POST['edit'])) {
                             <tr>
                                 <td>
                                     <button type="submit" class="btn btn-success" name="<?php echo isset($_POST['edit_dp']) ? 'edit' : 'add' ?>"><?php echo isset($_POST['edit_dp']) ? 'Edit' : 'Add' ?></button>
-                                    <?php echo isset($_POST['edit_dp']) ? '<button onClick="window.location.reload();" class="btn btn-danger">Cancel</button>' : '' ?>
+                                    <?php echo isset($_POST['edit_dp']) ? '<a onClick="window.location.reload();" class="btn btn-danger">Cancel</a>' : '' ?>
                                 </td>
                             </tr>
                         </tbody>
