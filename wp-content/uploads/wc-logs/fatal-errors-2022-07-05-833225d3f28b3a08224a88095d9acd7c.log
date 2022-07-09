@@ -1,0 +1,110 @@
+2022-07-05T14:08:13+00:00 CRITICAL Uncaught Error: Cannot use object of type Automattic\WooCommerce\Admin\Overrides\Order as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 50
+
+2022-07-05T14:09:23+00:00 CRITICAL Uncaught Error: Cannot use object of type Automattic\WooCommerce\Admin\Overrides\Order as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 50
+
+2022-07-05T14:12:21+00:00 CRITICAL Uncaught Error: Cannot use object of type Automattic\WooCommerce\Admin\Overrides\Order as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 50
+
+2022-07-05T14:12:43+00:00 CRITICAL Uncaught Error: Cannot use object of type Automattic\WooCommerce\Admin\Overrides\Order as array in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:50
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 50
+
+2022-07-05T14:48:46+00:00 CRITICAL Uncaught Error: Call to undefined function mysql_connect() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 19
+
+2022-07-05T14:49:04+00:00 CRITICAL Uncaught Error: Call to undefined function mysql_connect() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 19
+
+2022-07-05T14:49:06+00:00 CRITICAL Uncaught Error: Call to undefined function mysql_connect() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 19
+
+2022-07-05T14:49:13+00:00 CRITICAL Uncaught Error: Call to undefined function mysql_connect() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:19
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 19
+
+2022-07-05T14:49:36+00:00 CRITICAL Uncaught Error: Call to undefined function mysql_connect() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:18
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 18
+
+2022-07-05T14:51:10+00:00 CRITICAL Uncaught Error: Call to undefined function mysql_connect() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:18
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 18
+
+2022-07-05T14:55:34+00:00 CRITICAL Uncaught Error: Call to undefined function mysql_connect() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:18
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(149): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): Plugin_Name_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 18
+
