@@ -1,0 +1,2 @@
+2022-07-10T05:17:55+00:00 CRITICAL Out of memory (allocated 48234496) (tried to allocate 32768 bytes) in C:\xampp\htdocs\Sethtronics\wp-admin\includes\template.php on line 2279
+

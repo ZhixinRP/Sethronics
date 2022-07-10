@@ -159,8 +159,14 @@ class DMS
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
 
-		//add admin menu items
+		//Admin Menu Page Hook Register
 		$this->loader->add_action('admin_menu', $plugin_admin, 'my_admin_menu');
+
+		//Admin Ajax Request Hook
+		$this->loader->add_action('wp_ajax_form_action', $plugin_admin, 'admin_ajax_request_handle_fn');
+
+		//Admin Update DMS Table Hook
+		$this->loader->add_action('wp_update_dms_table', $plugin_admin, 'update_dms_table');
 	}
 
 	/**

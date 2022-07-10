@@ -11,33 +11,6 @@
  * @package    Plugin_Name
  * @subpackage Plugin_Name/admin/partials
  */
-$orders = wc_get_orders(array('status' => 'completed'));
-foreach ($orders as $order) {
-    echo $order;
-}
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "Sethtronics";
-
-
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$sql = "SELECT * FROM wp_wc_orders";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "id: " . $row["id"] . " - Name: " . $row["firstname"] . " " . $row["lastname"] . "<br>";
-    }
-} else {
-    echo "0 results";
-}
-$conn->close();
 
 ?>
 
@@ -76,16 +49,15 @@ $conn->close();
                             <td>' . esc_html($order->id) . '</td>
                             <td>' . esc_html($order_data['shipping']['first_name'] . ' ' . $order_data['shipping']['last_name']) . '</td>
                             <td>' . esc_html($order_data['shipping']['company'] ?: '-') . '</td>
-                            <td>' . esc_html($order_shipping_address) . '</td>
-                            <td class="flex">';
+                            <td>' . esc_html($order_shipping_address) . '</td>';
 
-                            echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            echo '<button type="submit" name="" class="edit btn btn-primary" value="">Assign</button>';
-                            echo '</form>';
+                            // echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
+                            // echo '<button type="submit" name="" class="edit btn btn-primary" value="">Assign</button>';
+                            // echo '</form>';
 
-                            echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            echo '<button type="submit" name="delete_dp" class="delete btn btn-danger" value="");">Delete</button>';
-                            echo '</form></td></tr>';
+                            // echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
+                            // echo '<button type="submit" name="delete_dp" class="delete btn btn-danger" value="");">Delete</button>';
+                            // echo '</form></td></tr>';
                         }
                         ?>
                     </tbody>

@@ -160,4 +160,21 @@ class Plugin_Name_Admin
 	{
 		require_once 'partials/dms-dp-orders.php';
 	}
+
+	public function admin_ajax_request_handle_fn()
+	{
+		/**
+		 * 
+		 * Admin Ajax Request Operation Function.
+		 * 
+		 */
+	}
+	public function update_dms_table()
+	{
+		/**
+		 * 
+		 * Update DMS Table Function.
+		 * 
+		 */
+	}
 }
