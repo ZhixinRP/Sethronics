@@ -45,7 +45,7 @@ define('DMS_PLUGIN_PATH', plugin_dir_path(__FILE__));
  */
 function activate_dms()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-dms-activator.php';
+	require_once DMS_PLUGIN_PATH . 'includes/class-dms-activator.php';
 	$activator = new DMS_Activator();
 	$activator->activate();
 }
@@ -56,7 +56,7 @@ function activate_dms()
  */
 function deactivate_dms()
 {
-	require_once plugin_dir_path(__FILE__) . 'includes/class-dms-deactivator.php';
+	require_once DMS_PLUGIN_PATH . 'includes/class-dms-deactivator.php';
 	$deactivator = new DMS_Deactivator();
 	$deactivator->deactivate();
 }
@@ -68,7 +68,7 @@ register_deactivation_hook(__FILE__, 'deactivate_dms');
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path(__FILE__) . 'includes/class-dms.php';
+require DMS_PLUGIN_PATH . 'includes/class-dms.php';
 
 /**
  * Begins execution of the plugin.

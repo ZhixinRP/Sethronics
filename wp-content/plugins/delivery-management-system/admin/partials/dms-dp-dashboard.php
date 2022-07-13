@@ -21,7 +21,7 @@
     <div class="item-container">
         <a href="admin.php?page=dms_dp_orders">
             <div class="item">
-                <img class="icon" src="<?php echo esc_url(PLUGIN_URL . "assets/images/delivery-icon.png"); ?>" alt="">
+                <img class="icon" src="<?php echo esc_url(DMS_PLUGIN_URL . "assets/images/delivery-icon.png"); ?>" alt="">
                 <p class="icon-text">Incoming Orders</p>
             </div>
         </a>
