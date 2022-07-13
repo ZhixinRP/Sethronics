@@ -187,17 +187,17 @@ class Plugin_Name_Admin
 		 */
 		//fetch confirmed orders data using wc_get_orders 
 		//insert the data into wp_dms_orders
-		global $wpdb;
-		$orders = wc_get_orders(array('status' => 'completed'));
-		foreach ($orders as $order) {
-			$order_data = $order->get_data();
-			$customer_name = $order_data['shipping']['first_name'] . ' ' . $order_data['shipping']['last_name'];
-			$order_address = $order_data['shipping']['address_1'] . ' ' . $order_data['shipping']['address_2'] . ', ' . $order_data['shipping']['country'] . ' ' . $order_data['shipping']['city'] ?: '' . ' ' . $order_data['shipping']['state'] ?: '' . ' ' . $order_data['shipping']['postcode'];
-			//Table Insert Query for dms orders
-			$wpdb->insert($this->table_activator->wp_dms_orders(), array(
-				'customer_name' => $customer_name,
-				'order_address' => $order_address,
-			));
-		}
+		// global $wpdb;
+		// $orders = wc_get_orders(array('status' => 'completed'));
+		// foreach ($orders as $order) {
+		// 	$order_data = $order->get_data();
+		// 	$customer_name = $order_data['shipping']['first_name'] . ' ' . $order_data['shipping']['last_name'];
+		// 	$order_address = $order_data['shipping']['address_1'] . ' ' . $order_data['shipping']['address_2'] . ', ' . $order_data['shipping']['country'] . ' ' . $order_data['shipping']['city'] ?: '' . ' ' . $order_data['shipping']['state'] ?: '' . ' ' . $order_data['shipping']['postcode'];
+		// 	//Table Insert Query for dms orders
+		// 	$wpdb->insert($this->table_activator->wp_dms_orders(), array(
+		// 		'customer_name' => $customer_name,
+		// 		'order_address' => $order_address,
+		// 	));
+		// }
 	}
 }
