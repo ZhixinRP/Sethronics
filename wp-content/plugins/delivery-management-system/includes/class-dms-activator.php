@@ -39,7 +39,8 @@ class DMS_Activator
 
 			//DMS Orders table Creation On Plugin Activation
 			$orders_table_create = "CREATE TABLE " . $this->wp_dms_orders() . " (
-				`order_id` int(5) NOT NULL AUTO_INCREMENT,
+				`id` int(5) NOT NULL AUTO_INCREMENT,
+				`order_id` int(5) NOT NULL,
 				`customer_name` varchar(20) NOT NULL,
 				`order_address` varchar(50) NOT NULL,
 				`delivery_personnel` varchar(20) DEFAULT NULL,
@@ -47,7 +48,7 @@ class DMS_Activator
 				`delivery_status` varchar(20) NOT NULL,
 				`delivery_datetime` DATETIME DEFAULT NULL,
 				`photo_evidence` varchar(200) DEFAULT NULL,
-				PRIMARY KEY (`order_id`)
+				PRIMARY KEY (`id`)
 			) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4";
 
 			require_once(ABSPATH . 'wp-admin/includes/upgrade.php');

@@ -12,26 +12,28 @@
  * @subpackage Plugin_Name/admin/partials
  */
 
-
 global $wpdb;
-$tablename = $wpdb->prefix . "dms_orders";
-//retrieve all status completed data from woocommerce orders
+$table_name = $wpdb->prefix . "dms_orders";
 $orders = wc_get_orders(array('status' => 'completed'));
-//update the wp_dms_orders table 
 foreach ($orders as $order) {
-    $order_data = $order->get_data();
-    $customer_name = $order_data['shipping']['first_name'] . ' ' . $order_data['shipping']['last_name'];
-    $order_address = $order_data['shipping']['address_1'] . ' ' . $order_data['shipping']['address_2'] . ', ' . $order_data['shipping']['country'] . ' ' . $order_data['shipping']['city'] ?: '' . ' ' . $order_data['shipping']['state'] ?: '' . ' ' . $order_data['shipping']['postcode'];
-
-    $sql = $wpdb->prepare("INSERT INTO `$tablename` (`order_id`, `customer_name`, `order_address`, `delivery_personnel`, `order_weight`, `delivery_status`, `delivery_datetime`, `photo_evidence`) values (NULL, $customer_name, $order_address, NULL, NULL, 'pending', NULL, NULL)");
-    $wpdb->query($sql);
+    $shipping_data = $order->get_data()['shipping'];
+    $order_id = $order->id;
+    $customer_name = $shipping_data['first_name'] . ' ' . $shipping_data['last_name'];
+    $order_address = $shipping_data['address_1'] . ' ' . $shipping_data['address_2'] . ', ' . $shipping_data['country'] . ' ' . $shipping_data['city'] ?: '' . ' ' . $shipping_data['state'] ?: '' . ' ' . $shipping_data['postcode'];
+    $results = $wpdb->get_results("SELECT COUNT(order_id) as count FROM " . $table_name . " WHERE order_id = " . $order_id . "");
+    foreach ($results as $result) {
+    }
+    if ($result->count == 0) {
+        $wpdb->insert("wp_dms_orders", array(
+            "order_id" => $order_id,
+            "customer_name" => $customer_name,
+            "order_address" => $order_address,
+        ));
+    }
 }
 
-
-//Retrieve data from wp_dms_orders table
-$unassigned_results = $wpdb->get_results("SELECT * FROM $tablename WHERE delivery_personnel IS NULL ");
-$assigned_results = $wpdb->get_results("SELECT * FROM $tablename WHERE delivery_personnel IS NOT NULL");
 ?>
+
 
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
@@ -54,33 +56,36 @@ $assigned_results = $wpdb->get_results("SELECT * FROM $tablename WHERE delivery_
                         <tr>
                             <th>Order ID</th>
                             <th>Customer Name</th>
-                            <th>Order Address</th>
+                            <th>Address</th>
                             <th>Delivery Personnel</th>
-                            <th>Order Weight</th>
+                            <th>Weight</th>
                             <th>Delivery Status</th>
+                            <th>Datetime</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        foreach ($unassigned_results as $ua_row) {
-                            $order_id = isset($ua_row->order_id) ? $ua_row->order_id : '-';
-                            $customer_name = isset($ua_row->customer_name) ? $ua_row->customer_name : '-';
-                            $order_address = isset($ua_row->order_address) ? $ua_row->order_address : '-';
-                            $delivery_personnel = isset($ua_row->delivery_personnel) ? $ua_row->delivery_personnel : '-';
-                            $order_weight = isset($ua_row->order_weight) ? $ua_row->order_weight : '-';
-                            $delivery_status = isset($ua_row->delivery_status) ? $ua_row->delivery_status : '-';
+                        $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . "");
+                        foreach ($order_list as $index => $data) {
+                            $ol_id = isset($data->order_id) ? $data->order_id : '-';
+                            $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+                            $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
+                            $ol_dp = isset($data->delivery_personnel) ? $data->delivery_personnel : '-';
+                            $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
+                            $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
+                            $ol_datetime = isset($data->delivery_datetime) ? $data->delivery_datetime : '-';
                         ?>
                             <tr>
-                                <td><?php echo $order_id ?></td>
-                                <td><?php echo $customer_name ?></td>
-                                <td><?php echo $order_address ?></td>
-                                <td><?php echo $delivery_personnel ?></td>
-                                <td><?php echo $order_weight ?></td>
-                                <td><?php echo $delivery_status ?></td>
-                            </tr>
-                        <?php
+                                <td><?php esc_html_e($ol_id); ?></td>
+                                <td><?php esc_html_e($ol_customer_name); ?></td>
+                                <td><?php esc_html_e($ol_order_address); ?></td>
+                                <td><?php esc_html_e($ol_dp); ?></td>
+                                <td><?php esc_html_e($ol_weight); ?></td>
+                                <td><?php esc_html_e($ol_status); ?></td>
+                                <td><?php esc_html_e($ol_datetime); ?></td>
+                            <?php
                         }
-                        ?>
+                            ?>
                     </tbody>
                 </table>
             </div>
