@@ -21,13 +21,13 @@
     <div class="item-container">
         <a href="admin.php?page=dms_admin_dp">
             <div class="item">
-                <img class="icon" src="<?php echo esc_url(PLUGIN_URL . "assets/images/delivery-icon.png"); ?>" alt="">
+                <img class="icon" src="<?php echo esc_url(DMS_PLUGIN_URL . "assets/images/delivery-icon.png"); ?>" alt="">
                 <p class="icon-text">Delivery Personnel Manager</p>
             </div>
         </a>
         <a href="admin.php?page=dms_admin_orders">
             <div class="item">
-                <img class="icon" src="<?php echo esc_url(PLUGIN_URL . "assets/images/order-icon.png"); ?>" alt="">
+                <img class="icon" src="<?php echo esc_url(DMS_PLUGIN_URL . "assets/images/order-icon.png"); ?>" alt="">
                 <p class="icon-text">Orders Manager</p>
             </div>
         </a>

@@ -20,7 +20,7 @@
  * @subpackage Plugin_Name/admin
  * @author     Your Name <email@example.com>
  */
-class Plugin_Name_Admin
+class DMS_Admin
 {
 
 	/**
@@ -40,6 +40,7 @@ class Plugin_Name_Admin
 	 * @var      string    $version    The current version of this plugin.
 	 */
 	private $version;
+	private $table_activator;
 
 	/**
 	 * Initialize the class and set its properties.
@@ -53,6 +54,11 @@ class Plugin_Name_Admin
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
+
+		//Activator Method
+		require_once DMS_PLUGIN_PATH . 'includes/class-dms-activator.php';
+		$activator = new DMS_Activator();
+		$this->table_activator = $activator;
 	}
 
 	/**
@@ -177,27 +183,5 @@ class Plugin_Name_Admin
 		 * Admin Ajax Request Operation Function.
 		 * 
 		 */
-	}
-	public function update_dms_table()
-	{
-		/**
-		 * 
-		 * Update DMS Table Function.
-		 * 
-		 */
-		//fetch confirmed orders data using wc_get_orders 
-		//insert the data into wp_dms_orders
-		global $wpdb;
-		$orders = wc_get_orders(array('status' => 'completed'));
-		foreach ($orders as $order) {
-			$order_data = $order->get_data();
-			$customer_name = $order_data['shipping']['first_name'] . ' ' . $order_data['shipping']['last_name'];
-			$order_address = $order_data['shipping']['address_1'] . ' ' . $order_data['shipping']['address_2'] . ', ' . $order_data['shipping']['country'] . ' ' . $order_data['shipping']['city'] ?: '' . ' ' . $order_data['shipping']['state'] ?: '' . ' ' . $order_data['shipping']['postcode'];
-			//Table Insert Query for dms orders
-			$wpdb->insert($this->table_activator->wp_dms_orders(), array(
-				'customer_name' => $customer_name,
-				'order_address' => $order_address,
-			));
-		}
 	}
 }

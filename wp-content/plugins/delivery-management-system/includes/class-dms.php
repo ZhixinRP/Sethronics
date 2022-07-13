@@ -154,7 +154,7 @@ class DMS
 	private function define_admin_hooks()
 	{
 
-		$plugin_admin = new Plugin_Name_Admin($this->get_plugin_name(), $this->get_version());
+		$plugin_admin = new DMS_Admin($this->get_plugin_name(), $this->get_version());
 
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
 		$this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
@@ -164,9 +164,6 @@ class DMS
 
 		//Admin Ajax Request Hook
 		$this->loader->add_action('wp_ajax_form_action', $plugin_admin, 'admin_ajax_request_handle_fn');
-
-		//Admin Update DMS Table Hook
-		$this->loader->add_action('wp_update_dms_table', $plugin_admin, 'update_dms_table');
 	}
 
 	/**

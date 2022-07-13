@@ -12,6 +12,25 @@
  * @subpackage Plugin_Name/admin/partials
  */
 
+
+global $wpdb;
+$tablename = $wpdb->prefix . "dms_orders";
+//retrieve all status completed data from woocommerce orders
+$orders = wc_get_orders(array('status' => 'completed'));
+//update the wp_dms_orders table 
+foreach ($orders as $order) {
+    $order_data = $order->get_data();
+    $customer_name = $order_data['shipping']['first_name'] . ' ' . $order_data['shipping']['last_name'];
+    $order_address = $order_data['shipping']['address_1'] . ' ' . $order_data['shipping']['address_2'] . ', ' . $order_data['shipping']['country'] . ' ' . $order_data['shipping']['city'] ?: '' . ' ' . $order_data['shipping']['state'] ?: '' . ' ' . $order_data['shipping']['postcode'];
+
+    $sql = $wpdb->prepare("INSERT INTO `$tablename` (`order_id`, `customer_name`, `order_address`, `delivery_personnel`, `order_weight`, `delivery_status`, `delivery_datetime`, `photo_evidence`) values (NULL, $customer_name, $order_address, NULL, NULL, 'pending', NULL, NULL)");
+    $wpdb->query($sql);
+}
+
+
+//Retrieve data from wp_dms_orders table
+$unassigned_results = $wpdb->get_results("SELECT * FROM $tablename WHERE delivery_personnel IS NULL ");
+$assigned_results = $wpdb->get_results("SELECT * FROM $tablename WHERE delivery_personnel IS NOT NULL");
 ?>
 
 
@@ -22,53 +41,88 @@
     <div class="title">Order Manager</div>
     <div class="tabs">
         <div class="tab-header">
-            <div class="tab active">Manage Orders</div>
-            <div class="tab">Assign Orders</div>
+            <div class="tab active">Unassigned Orders</div>
+            <div class="tab">Assigned Orders</div>
             <div class="tab">Export</div>
         </div>
 
         <div class="tab-body">
             <div class="tab-content active">
-                <div class="sub-title">Orders List</div>
+                <div class="sub-title">Unassigned Orders</div>
                 <table class="table table-bordered">
                     <thead class="table-dark table-bordered">
                         <tr>
                             <th>Order ID</th>
                             <th>Customer Name</th>
-                            <th>Company</th>
-                            <th>Address</th>
+                            <th>Order Address</th>
+                            <th>Delivery Personnel</th>
+                            <th>Order Weight</th>
+                            <th>Delivery Status</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $orders = wc_get_orders(array('status' => 'completed'));
-                        foreach ($orders as $order) {
-                            $order_data = $order->get_data();
-                            $order_shipping_address = $order_data['shipping']['address_1'] . ' ' . $order_data['shipping']['address_2'] . ', ' . $order_data['shipping']['country'] . ' ' . $order_data['shipping']['city'] ?: '' . ' ' . $order_data['shipping']['state'] ?: '' . ' ' . $order_data['shipping']['postcode'];
-                            echo '<tr>
-                            <td>' . esc_html($order->id) . '</td>
-                            <td>' . esc_html($order_data['shipping']['first_name'] . ' ' . $order_data['shipping']['last_name']) . '</td>
-                            <td>' . esc_html($order_data['shipping']['company'] ?: '-') . '</td>
-                            <td>' . esc_html($order_shipping_address) . '</td>';
-
-                            // echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            // echo '<button type="submit" name="" class="edit btn btn-primary" value="">Assign</button>';
-                            // echo '</form>';
-
-                            // echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            // echo '<button type="submit" name="delete_dp" class="delete btn btn-danger" value="");">Delete</button>';
-                            // echo '</form></td></tr>';
+                        foreach ($unassigned_results as $ua_row) {
+                            $order_id = isset($ua_row->order_id) ? $ua_row->order_id : '-';
+                            $customer_name = isset($ua_row->customer_name) ? $ua_row->customer_name : '-';
+                            $order_address = isset($ua_row->order_address) ? $ua_row->order_address : '-';
+                            $delivery_personnel = isset($ua_row->delivery_personnel) ? $ua_row->delivery_personnel : '-';
+                            $order_weight = isset($ua_row->order_weight) ? $ua_row->order_weight : '-';
+                            $delivery_status = isset($ua_row->delivery_status) ? $ua_row->delivery_status : '-';
+                        ?>
+                            <tr>
+                                <td><?php echo $order_id ?></td>
+                                <td><?php echo $customer_name ?></td>
+                                <td><?php echo $order_address ?></td>
+                                <td><?php echo $delivery_personnel ?></td>
+                                <td><?php echo $order_weight ?></td>
+                                <td><?php echo $delivery_status ?></td>
+                            </tr>
+                        <?php
                         }
                         ?>
                     </tbody>
                 </table>
             </div>
             <div class="tab-content">
-                <div class="sub-title">Assign Orders</div>
+                <div class="sub-title">Assigned Orders</div>
+                <table class="table table-bordered">
+                    <thead class="table-dark table-bordered">
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer Name</th>
+                            <th>Order Address</th>
+                            <th>Delivery Personnel</th>
+                            <th>Order Weight</th>
+                            <th>Delivery Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        foreach ($assigned_results as $a_row) {
+                            $order_id = isset($a_row->order_id) ? $a_row->order_id : '-';
+                            $customer_name = isset($a_row->customer_name) ? $a_row->customer_name : '-';
+                            $order_address = isset($a_row->order_address) ? $a_row->order_address : '-';
+                            $delivery_personnel = isset($a_row->delivery_personnel) ? $a_row->delivery_personnel : '-';
+                            $order_weight = isset($a_row->order_weight) ? $a_row->order_weight : '-';
+                            $delivery_status = isset($a_row->delivery_status) ? $a_row->delivery_status : '-';
+                        ?>
+                            <tr>
+                                <td><?php echo $order_id ?></td>
+                                <td><?php echo $customer_name ?></td>
+                                <td><?php echo $order_address ?></td>
+                                <td><?php echo $delivery_personnel ?></td>
+                                <td><?php echo $order_weight ?></td>
+                                <td><?php echo $delivery_status ?></td>
+                            </tr>
+                        <?php
+                        }
+                        ?>
+                    </tbody>
+                </table>
             </div>
             <div class="tab-content">
-                <div class="sub-title">This is Manage Order section</div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi architecto illo facere voluptate unde blanditiis temporibus incidunt. Aperiam error eius culpa, debitis eum beatae minima, molestiae, ipsum animi nulla excepturi.</p>
+                <div class="sub-title">Export Section</div>
             </div>
         </div>
     </div>

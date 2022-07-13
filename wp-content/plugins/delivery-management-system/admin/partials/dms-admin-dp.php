@@ -185,8 +185,7 @@ if (isset($_POST['edit'])) {
                 </form>
             </div>
             <div class="tab-content">
-                <div class="sub-title">This is Manage Order section</div>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi architecto illo facere voluptate unde blanditiis temporibus incidunt. Aperiam error eius culpa, debitis eum beatae minima, molestiae, ipsum animi nulla excepturi.</p>
+                <div class="sub-title">Export section</div>
             </div>
         </div>
     </div>
