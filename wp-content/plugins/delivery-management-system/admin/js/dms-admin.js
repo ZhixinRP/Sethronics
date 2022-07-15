@@ -28,6 +28,9 @@
    * Although scripts in the WordPress core, Plugins and Themes may be
    * practising this, we should strive to set a better example in our own work.
    */
+})(jQuery);
+
+jQuery(document).ready(function ($) {
   $('.delete').click(function (e) {
     if (!confirm('Are you sure you want to delete this user?')) {
       e.preventDefault();
@@ -38,7 +41,31 @@
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
-})(jQuery);
+  $('.updateBtn').on('click', function () {
+    $('#updatemodal').modal('show');
+  });
+
+  // Upload Image for Merchant Verification Document
+  $('#uploadBtn').click(function (e) {
+    // var photoEvidence = wp
+    //   .media({
+    //     title: 'Choose Image',
+    //     multiple: false,
+    //   })
+    //   .open()
+    //   .on('select', function (e) {
+    //     var uploaded_photo_evidence = photoEvidence
+    //       .state()
+    //       .get('selection')
+    //       .first();
+    //     var photo_evidence_data = uploaded_photo_evidence.toJSON();
+    //   });
+    wp.media({
+      title: 'Choose Image',
+      multiple: false,
+    }).open();
+  });
+});
 
 const tabs = document.querySelectorAll('.tab');
 const contents = document.querySelectorAll('.tab-content');

@@ -133,3 +133,9 @@ a:active, a:focus {
     margin-left: 5px;
     font-size: 0.9rem;
 }
+
+.photo-evidence {
+    width: 100%;
+    height: auto;
+    border: 1px solid #c3c4c7;
+}

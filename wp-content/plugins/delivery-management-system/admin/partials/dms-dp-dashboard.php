@@ -17,7 +17,8 @@
 <div class="dashboard">
     <p class="db-title">Delivery Management System<br />
         <?php $user = wp_get_current_user();
-        echo "Welcome, " . $user->user_login ?></p>
+        echo "Welcome, " . $user->user_login ?>
+    </p>
     <div class="item-container">
         <a href="admin.php?page=dms_dp_orders">
             <div class="item">
