@@ -185,7 +185,7 @@ if (isset($_POST['reject_order'])) {
                     <div class="form-group">
                         <label class="col-form-label">Photo Evidence</label>
                         <img src="<?php echo esc_url(DMS_PLUGIN_URL . "assets/images/placeholder.png"); ?>" class="photo-evidence" id="photo_evidence">
-                        <input type="button" class="btn btn-info" name="uploadBtn" id="uploadBtn" value="Upload Photo Evidence">
+                        <input type="button" class="btn btn-info" id="uploadBtn" value="Upload Photo Evidence">
                     </div>
 
 

@@ -11,27 +11,28 @@ jQuery(function () {
 
   // Upload Image for Merchant Verification Document
 
-  // jQuery(document).on('click', '#verification_document', function () {
-  //   var verifactionImage = wp
-  //     .media({
-  //       multiple: false,
-  //     })
-  //     .open()
-  //     .on('select', function (e) {
-  //       var uploaded_verification_image = verifactionImage
-  //         .state()
-  //         .get('selection')
-  //         .first();
+  jQuery(document).on('click', '#verification_document', function () {
+    var verifactionImage = wp
+      .media({
+        title: dwp_delivery_ajax.v_msg,
+        multiple: false,
+      })
+      .open()
+      .on('select', function (e) {
+        var uploaded_verification_image = verifactionImage
+          .state()
+          .get('selection')
+          .first();
 
-  //       var verification_image_data = uploaded_verification_image.toJSON();
+        var verification_image_data = uploaded_verification_image.toJSON();
 
-  //       jQuery('#merchant-verification-document').attr(
-  //         'src',
-  //         verification_image_data.url
-  //       );
-  //       jQuery('#merchant-verify-doc-hide').val(verification_image_data.url);
-  //     });
-  // });
+        jQuery('#merchant-verification-document').attr(
+          'src',
+          verification_image_data.url
+        );
+        jQuery('#merchant-verify-doc-hide').val(verification_image_data.url);
+      });
+  });
 
   // Upload Image for Merchant Shop Icon
 

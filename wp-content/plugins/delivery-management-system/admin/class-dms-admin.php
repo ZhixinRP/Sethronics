@@ -104,7 +104,7 @@ class DMS_Admin
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-
+		wp_enqueue_media();
 		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/dms-admin.js', array(), rand(111, 9999), 'all');
 		// wp_enqueue_script('bootstrap-js', plugin_dir_url(__FILE__) . 'js/bootstrap.min.js', array(), rand(111, 9999), 'all');
 	}
