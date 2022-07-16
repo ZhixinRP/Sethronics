@@ -131,7 +131,7 @@ if (isset($_POST['edit'])) {
                             <td>' . esc_html($dp_user->user_login) . '</td>
                             <td>' . esc_html($dp_user->user_nicename) . '</td>
                             <td>' . esc_html($dp_user->user_email) . '</td>
-                            <td class="flex">';
+                            <td class="d-flex gap-2">';
 
                             echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
                             echo '<button type="submit" name="edit_dp" class="edit btn btn-primary" value="' . esc_html($dp_user->ID) . '">Edit</button>';

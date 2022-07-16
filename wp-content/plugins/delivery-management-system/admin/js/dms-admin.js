@@ -1,4 +1,5 @@
 jQuery(document).ready(function ($) {
+  //Delete User button
   $('.delete').click(function (e) {
     if (!confirm('Are you sure you want to delete this user?')) {
       e.preventDefault();
@@ -6,14 +7,38 @@ jQuery(document).ready(function ($) {
     }
     return true;
   });
+  //Intisialise tooltip
   $(function () {
     $('[data-toggle="tooltip"]').tooltip();
   });
+
+  $('#updatemodal')
+    .on('show', function () {
+      $('body').addClass('modal-open');
+    })
+    .on('hidden', function () {
+      $('body').removeClass('modal-open');
+    });
+
+  //Update Details Button
   $('.updateBtn').on('click', function () {
+    $('#updatemodal').prependTo('body');
     $('#updatemodal').modal('show');
+    //Get closest row
+    var tr = $(this).closest('tr');
+    //Store closest row into data array
+    var data = tr
+      .children('td')
+      .map(function () {
+        return $(this).text();
+      })
+      .get();
+    //Store the ID of the selected update details row
+    $('#update-id').val(data[0]);
+    $('#update-id-text').text(data[0]);
   });
 
-  // Upload Image for Merchant Verification Document
+  // Upload Image Button
   $('#uploadBtn').click(function (e) {
     var images = wp
       .media({
@@ -27,7 +52,8 @@ jQuery(document).ready(function ($) {
       .on('select', function (e) {
         var uploadedImages = images.state().get('selection').first();
         var image_data = uploadedImages.toJSON();
-        $('#photo_evidence').attr('src', image_data.url);
+        $('#photo-evidence').attr('src', image_data.url);
+        $('#photo-evidence-hidden').val(image_data.url);
       });
   });
 });
