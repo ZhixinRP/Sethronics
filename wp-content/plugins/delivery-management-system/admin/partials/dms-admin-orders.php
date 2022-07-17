@@ -34,6 +34,44 @@ update_dms_table();
         <div class="tab-body">
             <div class="tab-content active">
                 <div class="sub-title">Unassigned Orders</div>
+
+                <?php 
+                    if(isset($_POST['assign_dp'])){
+                        global $wpdb;
+                        $wpdb->insert(
+                            $wpdb->prefix.'dms_orders',
+                            [
+                                'delivery_personnel' => $_POST['select_dp']
+                            ]
+                        );
+                    }
+                ?>
+
+                
+                
+
+                <form method="post">
+                <div>Select Delivery Personnel:</div>
+
+
+                <?php
+                $args = array(
+                    'role' => 'delivery_personnel'
+                );
+                $users = get_users($args);
+                echo '<select id="select_dp" name="select_dp">';
+                foreach ($users as $user){
+                    echo '<option value='. $user->user_email . '>'.esc_html($user->display_name).' ' .'['.esc_html($user->user_email).']</option>';
+                }
+                echo '</select>';
+
+                // if($_POST['select_dp'] != ''){
+
+                // } else {
+                //     echo "Please select a delivery personnel!";
+                // }
+                ?>
+
                 <table class="table table-bordered">
                     <thead class="table-dark table-bordered">
                         <tr>
@@ -44,6 +82,7 @@ update_dms_table();
                             <th>Weight</th>
                             <th>Delivery Status</th>
                             <th>Delivered Datetime</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -68,9 +107,15 @@ update_dms_table();
                                 <td><?php esc_html_e($ol_weight); ?></td>
                                 <td><?php esc_html_e($ol_status); ?></td>
                                 <td><?php esc_html_e($ol_datetime); ?></td>
+                                
+                                
+                                
+                                <td><button type="submit" name="assign_dp" class="edit btn btn-primary" value="submit">Assign</button></td>
+                                
                             <?php
                         }
                             ?>
+                    </form>
                     </tbody>
                 </table>
             </div>
