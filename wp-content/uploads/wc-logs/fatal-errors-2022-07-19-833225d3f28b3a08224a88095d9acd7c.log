@@ -1,0 +1,4 @@
+2022-07-19T12:30:25+00:00 CRITICAL syntax error, unexpected '}' in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 46
+
+2022-07-19T18:16:42+00:00 CRITICAL syntax error, unexpected ')' in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dwp-courier-delivery-management\admin\partials\tmpl-admin-dashboard.php on line 84
+

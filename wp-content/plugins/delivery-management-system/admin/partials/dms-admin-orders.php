@@ -11,9 +11,48 @@
  * @package    Plugin_Name
  * @subpackage Plugin_Name/admin/partials
  */
-
 require_once(DMS_PLUGIN_PATH . "/admin/functions.php");
 update_dms_table();
+global $wpdb;
+$table_name = $wpdb->prefix . "dms_orders";
+
+
+// Delivery Personnel Selection
+// if(isset($_POST['select_btn'])){
+//     $DP_selected = $_POST['select_dp'];
+//     echo $DP_selected;
+// }
+
+
+// Update DMS table for dp selected
+if(isset($_POST['assign_dp_btn'])){
+
+    $DP_selected = $_POST['select_dp'];
+    $order_id = $_POST['assign_dp_btn'];
+    
+
+    // $order_id = $_POST['assign-id'];
+    // echo $order_id;
+    // echo $_POST['assign-id'];
+    // echo $_POST['assign-id-text'];
+
+    $sql = $wpdb->prepare("
+
+    UPDATE $table_name 
+    SET delivery_personnel = '$DP_selected' 
+    WHERE order_id = '$order_id'
+
+    ");
+
+    $result = $wpdb->query($sql);
+
+    if ($result) {
+        echo "<p id='alert' class='alert alert-success'>Order Assigned</p>";
+    } else {
+        echo "<p id='alert' class='alert alert-danger'>Error" . $wpdb->last_error . "</p>";
+    }
+}
+
 
 ?>
 
@@ -34,26 +73,10 @@ update_dms_table();
         <div class="tab-body">
             <div class="tab-content active">
                 <div class="sub-title">Unassigned Orders</div>
-
-                <?php 
-                    if(isset($_POST['assign_dp'])){
-                        global $wpdb;
-                        $wpdb->insert(
-                            $wpdb->prefix.'dms_orders',
-                            [
-                                'delivery_personnel' => $_POST['select_dp']
-                            ]
-                        );
-                    }
-                ?>
-
-                
-                
-
-                <form method="post">
                 <div>Select Delivery Personnel:</div>
 
 
+                <form method="post">
                 <?php
                 $args = array(
                     'role' => 'delivery_personnel'
@@ -61,15 +84,9 @@ update_dms_table();
                 $users = get_users($args);
                 echo '<select id="select_dp" name="select_dp">';
                 foreach ($users as $user){
-                    echo '<option value='. $user->user_email . '>'.esc_html($user->display_name).' ' .'['.esc_html($user->user_email).']</option>';
+                    echo '<option <?php if($_POST["select_dp"]) && $_POST["select_dp"]=='.$user->user_login.') echo "selected=\"selected\"";?>  value='. $user->user_login . '>'.esc_html($user->user_login).'</option>';
                 }
                 echo '</select>';
-
-                // if($_POST['select_dp'] != ''){
-
-                // } else {
-                //     echo "Please select a delivery personnel!";
-                // }
                 ?>
 
                 <table class="table table-bordered">
@@ -89,7 +106,7 @@ update_dms_table();
                         <?php
                         global $wpdb;
                         $table_name = $wpdb->prefix . "dms_orders";
-                        $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . "");
+                        $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel IS NULL OR delivery_personnel = ''");
                         foreach ($order_list as $index => $data) {
                             $ol_id = isset($data->order_id) ? $data->order_id : '-';
                             $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
@@ -110,7 +127,7 @@ update_dms_table();
                                 
                                 
                                 
-                                <td><button type="submit" name="assign_dp" class="edit btn btn-primary" value="submit">Assign</button></td>
+                                <td><button type="submit" name="assign_dp_btn" class="btn btn-success assignBtn" value="<?php esc_html_e($ol_id); ?>">Assign</button></td>
                                 
                             <?php
                         }
