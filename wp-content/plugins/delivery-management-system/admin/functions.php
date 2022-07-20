@@ -23,4 +23,20 @@ function update_dms_table()
     }
 }
 
+function send_email()
+{
+    $email_to = "";
+    $subject = "";
+    $message = "";
+
+    $headers = ""
+
+    if( mail($email_to, $subject, $message, $headers) ){
+
+    } else {
+
+    }
+}
+?>
+
 

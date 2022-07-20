@@ -150,7 +150,7 @@ if (isset($_POST['update_order'])) {
                                     <td data-title="Weight"><?php esc_html_e($ol_weight); ?></td>
                                     <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
                                     <td data-title="Delivered Datetime"><?php esc_html_e($ol_datetime); ?></td>
-                                    <td data-title="Photo Evidence">
+                                    <td data-title="Photo Evidence" class="col-lg-2">
                                         <?php if (!empty($ol_photo)) {
                                         ?>
                                             <img src="<?php echo esc_url($ol_photo); ?>" class="uploaded-photo">

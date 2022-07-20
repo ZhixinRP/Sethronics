@@ -2,10 +2,13 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
- a {
-    text-decoration: none; 
+
+a {
+    text-decoration: none;
 }
-a:active, a:focus {
+
+a:active,
+a:focus {
     box-shadow: none;
 }
 
@@ -19,22 +22,26 @@ a:active, a:focus {
     font-size: 3rem;
     font-weight: 600;
 }
+
 .title {
     font-size: 2rem;
     font-weight: 500;
 }
+
 .sub-title {
     font-size: 1.5rem;
     font-weight: 500;
     margin-bottom: 20px;
 }
+
 .dashboard {
-    min-height: 88vh;    
+    min-height: 88vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
+
 .item-container {
     display: flex;
 }
@@ -66,20 +73,24 @@ a:active, a:focus {
     background-color: white;
 }
 
+
 /* TABS */
+
 .tabs {
     display: flex;
     flex-direction: column;
-	background-color: #fff;
+    background-color: #fff;
     padding: 20px 30px;
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 5px 10px 5px #CCC;
 }
+
 .tabs .tab-header {
     display: flex;
 }
-.tabs .tab-header > .tab {
+
+.tabs .tab-header>.tab {
     position: relative;
     text-align: center;
     color: #888;
@@ -91,27 +102,29 @@ a:active, a:focus {
     padding: 20px;
     margin: 1px;
 }
-.tabs .tab-header > .tab.active {
+
+.tabs .tab-header>.tab.active {
     color: #0071BC;
 }
-.tabs .tab-header > .tab.active::after {
-   width: 100%;
-   height: 5px;
-   border-radius: 25px;
-   background: #0071BC;
-   position: absolute;
-   bottom: 0;
-   left: 0;
-   display: block;
-   content: '';
+
+.tabs .tab-header>.tab.active::after {
+    width: 100%;
+    height: 5px;
+    border-radius: 25px;
+    background: #0071BC;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: '';
 }
 
-.tab-body > .tab-content {
+.tab-body>.tab-content {
     display: none;
     padding: 20px 0;
 }
 
-.tab-body > .tab-content.active {
+.tab-body>.tab-content.active {
     display: block;
 }
 
@@ -144,7 +157,6 @@ a:active, a:focus {
     height: auto;
     border: 1px solid #c3c4c7;
 }
-
 
 @media only screen and (max-width:800px) {
     .title {
@@ -184,7 +196,7 @@ a:active, a:focus {
         display: flex;
         justify-content: space-between;
     }
-    .tabs .tab-header > .tab {
+    .tabs .tab-header>.tab {
         font-size: 0.7rem;
         padding: 0 5px 10px 5px;
     }

@@ -84,7 +84,7 @@ if(isset($_POST['assign_dp_btn'])){
                 $users = get_users($args);
                 echo '<select id="select_dp" name="select_dp">';
                 foreach ($users as $user){
-                    echo '<option <?php if($_POST["select_dp"]) && $_POST["select_dp"]=='.$user->user_login.') echo "selected=\"selected\"";?>  value='. $user->user_login . '>'.esc_html($user->user_login).'</option>';
+                    echo '<option value='. $user->user_login . '>'.esc_html($user->user_login).'</option>';
                 }
                 echo '</select>';
                 ?>
