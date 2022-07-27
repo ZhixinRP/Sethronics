@@ -13,6 +13,10 @@
  */
 require_once(DMS_PLUGIN_PATH . "/admin/functions.php");
 update_dms_table();
+// $email_to = get_bloginfo('admin_email');
+$email_to = "liuzhixin.sg@gmail.com";
+$subject = "Test";
+send_email($email_to, $subject);
 global $wpdb;
 $table_name = $wpdb->prefix . "dms_orders";
 
