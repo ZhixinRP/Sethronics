@@ -20,16 +20,19 @@ a:focus {
   font-size: 3rem;
   font-weight: 600;
 }
+
 .title {
   font-size: 2rem;
   font-weight: 500;
 }
+
 .sub-title {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 20px;
   text-align: center;
 }
+
 .dashboard {
   min-height: 88vh;
   display: flex;
@@ -37,6 +40,7 @@ a:focus {
   align-items: center;
   flex-direction: column;
 }
+
 .item-container {
   display: flex;
 }
@@ -69,6 +73,7 @@ a:focus {
 }
 
 /* TABS */
+
 .tabs {
   display: flex;
   flex-direction: column;
@@ -78,6 +83,7 @@ a:focus {
   border-radius: 15px;
   box-shadow: 5px 10px 5px #ccc;
 }
+
 .tabs .tab-header {
   display: flex;
 }

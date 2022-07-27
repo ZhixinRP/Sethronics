@@ -1,0 +1,4 @@
+2022-07-27T01:57:00+00:00 CRITICAL syntax error, unexpected '}', expecting end of file in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 106
+
+2022-07-27T01:57:44+00:00 CRITICAL syntax error, unexpected 'if' (T_IF) in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 34
+
