@@ -1,0 +1,60 @@
+2022-07-23T04:22:53+00:00 CRITICAL Uncaught Error: Call to undefined function esc_ehtml_e() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:90
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 90
+
+2022-07-23T04:23:13+00:00 CRITICAL Uncaught Error: Call to undefined function esc_ehtml_e() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:90
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 90
+
+2022-07-23T04:23:24+00:00 CRITICAL Uncaught Error: Call to undefined function esc_ehtml_e() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:90
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 90
+
+2022-07-23T04:42:37+00:00 CRITICAL Uncaught Error: Call to undefined function esc_ehtml_e() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:90
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 90
+
+2022-07-23T04:42:55+00:00 CRITICAL Uncaught Error: Call to undefined function esc_ehtml_e() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:90
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 90
+
+2022-07-23T05:31:15+00:00 CRITICAL Uncaught Error: Call to undefined function esc_html_ee() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:97
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 97
+

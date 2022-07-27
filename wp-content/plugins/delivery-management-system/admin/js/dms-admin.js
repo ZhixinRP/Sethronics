@@ -78,18 +78,3 @@ function hideAlert() {
   document.getElementById("alert").style.display = "none";
 }
 setTimeout(hideAlert, 3000);
-
-// Assign DP Get order ID from table row
-// $(".assignBtn").on("click", function () {
-//   var tr = $(this).closest("tr");
-//   var data = tr
-//     .children("td")
-//     .map(function () {
-//       return $(this).text();
-//     })
-//     .get();
-
-//   $("#assign-id").val(data[0]);
-//   $("#assign-id-text").text(data[0]);
-//   $('#burger') = 'burger';
-// });
