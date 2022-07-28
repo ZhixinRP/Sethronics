@@ -26,13 +26,6 @@ a:focus {
   font-weight: 500;
 }
 
-.sub-title {
-  font-size: 2rem;
-  font-weight: 500;
-  margin-bottom: 20px;
-  text-align: center;
-}
-
 .dashboard {
   min-height: 88vh;
   display: flex;

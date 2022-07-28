@@ -45,7 +45,7 @@ if(isset($_POST['assign_dp_btn'])){
 }
 
 //Filter order by delivery personnel
-$sql_filter = $wpdb->prepare("SELECT * FROM $table_name WHERE  (delivery_personnel != ''  OR delivery_personnel IS NOT NULL) ");
+$sql_filter = $wpdb->prepare("SELECT * FROM $table_name WHERE  delivery_personnel IS NOT NULL");
 if(isset($_POST['filter_order_btn'])){
     $dp_filter = $_POST['fetchval'];
     if($dp_filter != 'all'){
@@ -53,9 +53,9 @@ if(isset($_POST['filter_order_btn'])){
     }
     $result = $wpdb->query($sql_filter);
     if($result) {
-        echo "<p class='alert alert-success'>".$result." Orders found for ".$dp_filter."</p>";
+        echo "<p class='alert alert-success' id='alert'>".$result." Orders found for ".$dp_filter."</p>";
     } else {
-        echo "<p class='alert alert-info'>No orders found for delivery personnel</p>";
+        echo "<p class='alert alert-info' id='alert'>No orders found for delivery personnel</p>";
     }
 
 }
@@ -77,15 +77,14 @@ if(isset($_POST['filter_order_btn'])){
 <div class="wrap">
     <div class="title">Order Manager</div>
     <div class="tabs">
-        <div class="tab-header">
-            <div class="tab active unassign-orders-tab">Unassigned Orders</div>
-            <div class="tab assign-orders-tab">Assigned Orders</div>
-            <div class="tab">Export</div>
+        <div class="tab-header pb-3">
+            <div class="tab <?php echo !isset($_POST['filter_order_btn']) ? 'active' : '' ?>">Unassigned Orders</div>
+            <div class="tab <?php echo isset($_POST['filter_order_btn']) ? 'active' : '' ?>">Active Orders</div>
+            <div class="tab">Delivered Orders</div>
         </div>
 
         <div class="tab-body">
-            <div class="tab-content active unassign-orders-tab-content">
-                <div class="sub-title">Unassigned Orders</div>
+            <div class="tab-content <?php echo !isset($_POST['filter_order_btn']) ? 'active' : '' ?>">
                 <div>Select Delivery Personnel:</div>
 
 
@@ -115,7 +114,7 @@ if(isset($_POST['filter_order_btn'])){
                             <th>Weight</th>
                             <th>Delivery Status</th>
                             <th>Delivered Datetime</th>
-                            <th></th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -133,13 +132,13 @@ if(isset($_POST['filter_order_btn'])){
                             $ol_datetime = isset($data->delivery_datetime) ? $data->delivery_datetime : '-';
                         ?>
                             <tr>
-                                <td><?php esc_html_e($ol_id); ?></td>
-                                <td><?php esc_html_e($ol_customer_name); ?></td>
-                                <td><?php esc_html_e($ol_order_address); ?></td>
-                                <td><?php esc_html_e($ol_dp); ?></td>
-                                <td><?php esc_html_e($ol_weight); ?></td>
-                                <td><?php esc_html_e($ol_status); ?></td>
-                                <td><?php esc_html_e($ol_datetime); ?></td>
+                                <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
+                                <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
+                                <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
+                                <td data-title="Delivery Personnel"><?php esc_html_e($ol_dp); ?></td>
+                                <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
+                                <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
+                                <td data-title="Delivered Datetime"><?php esc_html_e($ol_datetime); ?></td>
                                 
                                 
                                 
@@ -152,9 +151,8 @@ if(isset($_POST['filter_order_btn'])){
                     </tbody>
                 </table>
             </div>
-            <div class="tab-content assign-orders-tab-content">
+            <div class="tab-content <?php echo isset($_POST['filter_order_btn']) ? 'active' : '' ?>">
                 <form method="post">
-                <div class="sub-title">Assigned Orders</div>
                 <div></div>
                 <div id="filters">
                     <select name="fetchval" id="fetchval" class="dropdown mb-4">
@@ -191,14 +189,15 @@ if(isset($_POST['filter_order_btn'])){
                             $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
                             $ol_dp = isset($data->delivery_personnel) ? $data->delivery_personnel : '-';
                             $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
+                            $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
                         ?>
                         <tr>
-                            <td><?php esc_html_e($ol_id); ?></td>
-                            <td><?php esc_html_e($ol_customer_name); ?></td>
-                            <td><?php esc_html_e($ol_order_address); ?></td>
-                            <td><?php esc_html_e($ol_dp); ?></td>
-                            <td><?php esc_html_e($ol_weight); ?></td>
-                            <td><?php esc_html_e($ol_status); ?></td>
+                            <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
+                            <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
+                            <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
+                            <td data-title="Delivery Personnel"><?php esc_html_e($ol_dp); ?></td>
+                            <td data-title="Order Weight"><?php esc_html_e($ol_weight); ?></td>
+                            <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
 
                         </tr>
 
@@ -211,8 +210,49 @@ if(isset($_POST['filter_order_btn'])){
             </div>
         </div>
         <div class="tab-content">
-                <div class="sub-title">Export Section</div>
-            </div>
+        <table class="table table-bordered">
+                    <thead class="table-dark table-bordered">
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Customer Name</th>
+                            <th>Address</th>
+                            <th>Delivery Personnel</th>
+                            <th>Weight</th>
+                            <th>Delivery Status</th>
+                            <th>Delivered Datetime</th>
+                            <th>Photo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php
+                        // global $wpdb;
+                        $table_name = $wpdb->prefix . "dms_orders";
+                        $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_status =  'Delivered'");
+                        foreach ($order_list as $index => $data) {
+                            $ol_id = isset($data->order_id) ? $data->order_id : '-';
+                            $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+                            $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
+                            $ol_dp = isset($data->delivery_personnel) ? $data->delivery_personnel : '-';
+                            $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
+                            $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
+                            $ol_datetime = isset($data->delivery_datetime) ? $data->delivery_datetime : '-';
+                        ?>
+                            <tr>
+                                <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
+                                <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
+                                <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
+                                <td data-title="Delivery Personnel"><?php esc_html_e($ol_dp); ?></td>
+                                <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
+                                <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
+                                <td data-title="Delivered Datetime"><?php esc_html_e($ol_datetime); ?></td>
+                                
+                            
+                            <?php
+                        }
+                            ?>
+                    </tbody>
+                </table>
+        </div>
     </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
@@ -226,18 +266,6 @@ if(isset($_POST['filter_order_btn'])){
         document.getElementById('fetchval').value = "<?php echo $_POST['fetchval'];?>";
     <?php } ?>
 
-    
-    // function switchToAssign() {
-    //     var UOTab = document.getElementById("unassign-orders-tab");
-    //     var UOContent = document.getElementById("unassign-orders-tab-content");
-    //     var AOTab = document.getElementById("assign-orders-tab");
-    //     var AOContent = document.getElementById("assign-orders-tab-content") 
-        
-    //     UOTab.classList.remove("active");
-    //     UOContent.classList.remove("active");
-    //     AOTab.classList.add("active");
-    //     AOContent.classList.add("active");
-    // }
 
 
 </script>
