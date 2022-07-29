@@ -1,0 +1,75 @@
+2022-07-28T13:52:50+00:00 CRITICAL Uncaught Error: Call to a member function get_quantity() on null in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:13
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 13
+
+2022-07-28T13:59:19+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Order_Item_Product::get_weight() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 20
+
+2022-07-28T14:07:05+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Order_Item_Product::get_weight() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 20
+
+2022-07-28T14:07:45+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Order_Item_Product::get_weight() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 20
+
+2022-07-28T14:10:48+00:00 CRITICAL Uncaught Error: Call to undefined method WC_Order_Item_Product::get_weight() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:20
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 20
+
+2022-07-28T14:52:54+00:00 CRITICAL Uncaught Error: Call to a member function get_items() on null in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:60
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 60
+
+2022-07-28T14:54:11+00:00 CRITICAL Uncaught Error: Call to a member function get_items() on boolean in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:61
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(164): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 61
+

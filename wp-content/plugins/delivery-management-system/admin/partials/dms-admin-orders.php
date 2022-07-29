@@ -45,7 +45,7 @@ if(isset($_POST['assign_dp_btn'])){
 }
 
 //Filter order by delivery personnel
-$sql_filter = $wpdb->prepare("SELECT * FROM $table_name WHERE  delivery_personnel IS NOT NULL");
+$sql_filter = $wpdb->prepare("SELECT * FROM $table_name WHERE  delivery_personnel IS NOT NULL ");
 if(isset($_POST['filter_order_btn'])){
     $dp_filter = $_POST['fetchval'];
     if($dp_filter != 'all'){
@@ -58,7 +58,14 @@ if(isset($_POST['filter_order_btn'])){
         echo "<p class='alert alert-info' id='alert'>No orders found for delivery personnel</p>";
     }
 
+
 }
+
+
+
+
+
+
 
 ?>
 
@@ -130,6 +137,7 @@ if(isset($_POST['filter_order_btn'])){
                             $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
                             $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
                             $ol_datetime = isset($data->delivery_datetime) ? $data->delivery_datetime : '-';
+                            
                         ?>
                             <tr>
                                 <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
