@@ -84,7 +84,7 @@ if (isset($_POST['update_order'])) {
 <div class="wrap">
     <div class="title">Order Manager</div>
     <div class="tabs">
-        <div class="tab-header">
+        <div class="tab-header pb-3">
             <div class="tab <?php echo !isset($_POST['update_order']) ? 'active' : '' ?>">Incoming Orders</div>
             <div class="tab <?php echo isset($_POST['update_order']) ? 'active' : '' ?>">Accepted Orders</div>
             <div class="tab">Export</div>
@@ -92,7 +92,6 @@ if (isset($_POST['update_order'])) {
 
         <div class="tab-body">
             <div class="tab-content <?php echo !isset($_POST['update_order']) ? 'active' : '' ?>">
-                <div class="sub-title">Incoming Orders</div>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead class="table-dark table-bordered">
@@ -141,7 +140,6 @@ if (isset($_POST['update_order'])) {
                 </div>
             </div>
             <div class="tab-content <?php echo isset($_POST['update_order']) ? 'active' : '' ?>">
-                <div class="sub-title">Accepted Orders</div>
                 <div class="table-responsive">
                     <table class="table table-bordered">
                         <thead class="table-dark table-bordered">
