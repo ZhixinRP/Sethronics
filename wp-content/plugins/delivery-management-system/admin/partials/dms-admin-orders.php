@@ -45,7 +45,7 @@ if(isset($_POST['assign_dp_btn'])){
 }
 
 //Filter order by delivery personnel
-$sql_filter = $wpdb->prepare("SELECT * FROM $table_name WHERE  delivery_personnel IS NOT NULL ");
+$sql_filter = $wpdb->prepare("SELECT * FROM $table_name WHERE  delivery_personnel IS NOT NULL AND (delivery_status =  'processing' OR delivery_status =  'In Transit') ");
 if(isset($_POST['filter_order_btn'])){
     $dp_filter = $_POST['fetchval'];
     if($dp_filter != 'all'){
@@ -117,10 +117,7 @@ if(isset($_POST['filter_order_btn'])){
                             <th>Order ID</th>
                             <th>Customer Name</th>
                             <th>Address</th>
-                            <th>Delivery Personnel</th>
                             <th>Weight</th>
-                            <th>Delivery Status</th>
-                            <th>Delivered Datetime</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -133,20 +130,15 @@ if(isset($_POST['filter_order_btn'])){
                             $ol_id = isset($data->order_id) ? $data->order_id : '-';
                             $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
                             $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
-                            $ol_dp = isset($data->delivery_personnel) ? $data->delivery_personnel : '-';
                             $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
-                            $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
-                            $ol_datetime = isset($data->delivery_datetime) ? $data->delivery_datetime : '-';
                             
                         ?>
                             <tr>
                                 <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
                                 <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
                                 <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
-                                <td data-title="Delivery Personnel"><?php esc_html_e($ol_dp); ?></td>
                                 <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
-                                <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
-                                <td data-title="Delivered Datetime"><?php esc_html_e($ol_datetime); ?></td>
+
                                 
                                 
                                 
@@ -161,7 +153,6 @@ if(isset($_POST['filter_order_btn'])){
             </div>
             <div class="tab-content <?php echo isset($_POST['filter_order_btn']) ? 'active' : '' ?>">
                 <form method="post">
-                <div></div>
                 <div id="filters">
                     <select name="fetchval" id="fetchval" class="dropdown mb-4">
                         <option selected="" value="all">All</option>
@@ -233,7 +224,6 @@ if(isset($_POST['filter_order_btn'])){
                     </thead>
                     <tbody>
                         <?php
-                        // global $wpdb;
                         $table_name = $wpdb->prefix . "dms_orders";
                         $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_status =  'Delivered'");
                         foreach ($order_list as $index => $data) {
@@ -244,6 +234,7 @@ if(isset($_POST['filter_order_btn'])){
                             $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
                             $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
                             $ol_datetime = isset($data->delivery_datetime) ? $data->delivery_datetime : '-';
+                            $ol_photo = isset($data->photo_evidence) ? $data->photo_evidence : '';
                         ?>
                             <tr>
                                 <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
@@ -253,7 +244,16 @@ if(isset($_POST['filter_order_btn'])){
                                 <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
                                 <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
                                 <td data-title="Delivered Datetime"><?php esc_html_e($ol_datetime); ?></td>
-                                
+                                <td data-title="Photo Evidence" class="col-lg-2">
+                                        <?php if (!empty($ol_photo)) {
+                                        ?>
+                                            <img src="<?php echo esc_url($ol_photo); ?>" class="uploaded-photo">
+                                        <?php
+                                        } else {
+                                            esc_html_e("No Image");
+                                        }
+                                        ?>
+                                </td>
                             
                             <?php
                         }

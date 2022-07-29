@@ -32,7 +32,7 @@ if (isset($_POST['accept_order'])) {
     $id = $result->order_id;
     $name = $result->customer_name;
     $address = $result->order_address;
-    $dp = $result->delivery_personnel;
+    $dp = $result->delivery_personnel;  
     $email_to = get_bloginfo('admin_email');
     $subject = "DMS Notification";
     $type = "accepted";

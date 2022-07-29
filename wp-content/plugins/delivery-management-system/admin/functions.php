@@ -26,6 +26,8 @@ function update_dms_table()
                 // echo "Weight:";
                 // echo $product_weight;
             }
+
+
             $wpdb->insert("wp_dms_orders", array(
                 "order_id" => $order_id,
                 "customer_name" => $customer_name,
@@ -37,11 +39,7 @@ function update_dms_table()
     }
 }
 
-// function get_post_meta( $post_id, $key = '', $single = false ) {
-//     return get_metadata( 'post', $post_id, $key, $single );
-// }
-
-function send_email($email_to, $subject)
+function send_email($email_to, $subject, $id, $name, $dp, $address, $type)
 {
 
     //location of template file
