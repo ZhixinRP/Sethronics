@@ -23,19 +23,31 @@ function update_dms_table()
     }
 }
 
-function send_email($email_to, $subject)
+function send_email($email_to, $subject, $id, $name, $dp, $address, $type)
 {
 
     //location of template file
     $template_file = DMS_PLUGIN_PATH . "assets/templates/email.php";
 
+    if ($type == 'accepted') {
+        $email_title = "Order has been Accepted!";
+        $btn_text = "View in dashboard";
+    } else if ($type == 'rejected') {
+        $email_title = "Order has been Rejected!";
+        $btn_text = "View in dashboard";
+    }
+
     //create swap variables array
     $swap_var = array(
         "{SITE_ADDR}" => "http://fypteam1.amos-ng.tech/",
         "{EMAIL_LOGO}" => DMS_PLUGIN_URL . "assets/images/sethtronics_logo.png",
-        "{EMAIL_TITLE}" => "You have an Incoming Order!",
-        "{BUTTON_TEXT}" => "Accept/Reject Order",
+        "{EMAIL_TITLE}" => $email_title,
+        "{BUTTON_TEXT}" => $btn_text,
         "{BUTTON_LINK}" => "http://fypteam1.amos-ng.tech/wp-admin/",
+        "{ORDER_ID}" => $id,
+        "{CUSTOMER_NAME}" => $name,
+        "{DELIVERY_PERSONNEL}" => $dp,
+        "{ADDRESS}" => $address,
     );
 
     // Set content-type header for sending HTML email 
@@ -45,7 +57,7 @@ function send_email($email_to, $subject)
     if (file_exists($template_file)) {
         $message = file_get_contents($template_file);
     } else {
-        die("unable to locate template file");
+        echo "unable to locate template file";
     }
 
     foreach (array_keys($swap_var) as $key) {
@@ -53,12 +65,5 @@ function send_email($email_to, $subject)
             $message = str_replace($key, $swap_var[$key], $message);
         }
     }
-
-    echo $message;
-
-    if (mail($email_to, $subject, $message, $headers)) {
-        echo 'success';
-    } else {
-        echo 'not sent';
-    }
+    mail($email_to, $subject, $message, $headers);
 }

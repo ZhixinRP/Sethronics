@@ -118,6 +118,7 @@ class DMS_Admin
 		add_submenu_page('dms_plugin', 'Dashboard', 'Dashboard', 'manage_admin_dashboard', 'dms_plugin', array($this, 'dms_admin_dashboard'));
 		add_submenu_page('dms_plugin', 'DP Manager', 'DP Manager', 'manage_admin_dp', 'dms_admin_dp', array($this, 'dms_admin_dp'));
 		add_submenu_page('dms_plugin', 'Order Manager', 'Order Manager', 'manage_admin_orders', 'dms_admin_orders', array($this, 'dms_admin_orders'));
+		add_submenu_page('dms_plugin', 'Order Location', 'Order Location', 'manage_admin_locations', 'dms_admin_locations', array($this, 'dms_admin_locations'));
 
 		//DELIVERY PERSONNEL SECTION
 		add_menu_page('DMS', 'DMS', 'manage_dp_dashboard', 'dms_plugin_dp', array($this, 'dms_dp_page'), 'dashicons-car', 250);
@@ -148,20 +149,15 @@ class DMS_Admin
 	}
 	public function dms_admin_dp()
 	{
-		// global $wpdb;
-
-		// $dp_list = $wpdb->get_results(
-
-		// 	$wpdb->prepare(
-		// 		"SELECT * FROM " . $wpdb->prefix . "users",
-		// 		"WHERE Country='Mexico';"
-		// 	)
-		// );
 		require_once 'partials/dms-admin-dp.php';
 	}
 	public function dms_admin_orders()
 	{
 		require_once 'partials/dms-admin-orders.php';
+	}
+	public function dms_admin_locations()
+	{
+		require_once 'partials/dms-admin-locations.php';
 	}
 	public function	dms_dp_page()
 	{

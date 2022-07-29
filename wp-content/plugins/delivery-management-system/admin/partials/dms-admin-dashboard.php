@@ -31,5 +31,11 @@
                 <p class="icon-text">Orders Manager</p>
             </div>
         </a>
+        <a href="admin.php?page=dms_admin_locations">
+            <div class="item">
+                <img class="icon" src="<?php echo esc_url(DMS_PLUGIN_URL . "assets/images/order-icon.png"); ?>" alt="">
+                <p class="icon-text">Order Locations</p>
+            </div>
+        </a>
     </div>
 </div>

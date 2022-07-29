@@ -13,22 +13,9 @@
  */
 require_once(DMS_PLUGIN_PATH . "/admin/functions.php");
 update_dms_table();
-// $email_to = get_bloginfo('admin_email');
-$email_to = "liuzhixin.sg@gmail.com";
-$subject = "Test";
-send_email($email_to, $subject);
+
 global $wpdb;
 $table_name = $wpdb->prefix . "dms_orders";
-
-
-
-// Email Section
-
-$to = "liangzikai1111@gmail.com";
-$subject = "test";
-$txt = "Testing";
-$headers = "From: The Sender Name <sethtroinics@sethtronics.com\r\n";
-
 
 if (isset($_POST['accept_order'])) {
     $order_id = $_POST['accept_order'];
@@ -40,11 +27,32 @@ if (isset($_POST['accept_order'])) {
         echo "<p id='alert' class='alert alert-danger'>" . $wpdb->last_error . "</p>";
     }
 
-    mail($to,$subject,$txt, $headers);
-
+    //EMAIL VARIABLES
+    $result = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE order_id = '$order_id'"));
+    $id = $result->order_id;
+    $name = $result->customer_name;
+    $address = $result->order_address;
+    $dp = $result->delivery_personnel;
+    $email_to = get_bloginfo('admin_email');
+    $subject = "DMS Notification";
+    $type = "accepted";
+    send_email($email_to, $subject, $id, $name, $dp, $address, $type);
 }
 if (isset($_POST['reject_order'])) {
     $order_id = $_POST['reject_order'];
+
+    //EMAIL VARIABLES
+    $result = $wpdb->get_row($wpdb->prepare("SELECT * FROM $table_name WHERE order_id = '$order_id'"));
+    $id = $result->order_id;
+    $name = $result->customer_name;
+    $address = $result->order_address;
+    $dp = $result->delivery_personnel;
+    $email_to = get_bloginfo('admin_email');
+    $subject = "DMS Notification";
+    $type = "rejected";
+    send_email($email_to, $subject, $id, $name, $dp, $address, $type);
+
+
     $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 0, delivery_personnel = '' WHERE order_id = '$order_id'");
     $result = $wpdb->query($sql);
     if ($result) {

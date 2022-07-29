@@ -7,121 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Email</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        #wrapper {
-            width: 80%;
-            margin: auto auto;
-            padding: 20px;
-        }
-
-        #logo {
-            display: flex;
-            justify-content: center;
-        }
-
-        #content {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 25px;
-            border-radius: 10px;
-            border: 3px solid #0071BC;
-        }
-
-        .table-container {
-            width: 100%;
-            margin: 30px 0 30px 0;
-            display: flex;
-        }
-
-        .email-btn {
-            display: inline-block;
-            border-radius: 10px;
-            border: 3px solid #0071BC;
-            color: #0071BC;
-            padding: 15px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .email-btn:hover {
-            background-color: #0071BC;
-            color: #FFFFFF;
-        }
-
-        .email-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-align: center;
-        }
-
-        .table-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .column {
-            flex: 50%;
-        }
-
-        img {
-            margin: 15px 0 15px 0;
-            max-height: 75px;
-        }
-
-        td {
-            padding: 0 20px;
-        }
-
-        th,
-        td {
-            text-align: left;
-            font-weight: 500;
-        }
-    </style>
 </head>
 
 <body>
-    <div id="wrapper" style="font-family: 'Poppins', sans-serif;">
-        <div id="logo">
+    <div id="wrapper" style="font-family: 'Poppins', sans-serif; max-width:650px; margin: auto auto; padding: 20px; color:black;">
+        <div id="logo" style="text-align:center;">
             <a href="{SITE_ADDR}" target="_blank">
-                <img src="{EMAIL_LOGO}" alt="logo">
+                <img src="{EMAIL_LOGO}" alt="logo" style="margin: 15px 0 15px 0; max-height: 75px;">
             </a>
         </div>
-        <div id="content">
+        <div id="content" style="text-align:center; padding: 25px; border-radius: 10px; border: 3px solid #0071BC;">
             <div>
-                <div class="email-title">{EMAIL_TITLE}</div>
-                <div class="table-container">
-                    <div class="column">
-                        <div class="table-title">Summary</div>
+                <div id="email-title" style="font-size: 1.5rem; font-weight: 700;">{EMAIL_TITLE}</div>
+                <div id="table-container" style="width: 100%; margin: 30px 0 30px 0; display: flex;">
+                    <div style="width: 50%;">
+                        <div style="font-size: 1.2rem; font-weight: 700; text-align: left;">Summary</div>
                         <table>
                             <tr>
-                                <th>Order ID:</th>
-                                <td>4500</td>
+                                <th style="text-align: left;">Order ID:</th>
+                                <td style="padding: 0 20px; text-align: left;">{ORDER_ID}</td>
                             </tr>
                             <tr>
-                                <th>Customer Name:</th>
-                                <td>zikai liu</td>
+                                <th style="text-align: left;">Customer Name:</th>
+                                <td style="padding: 0 20px; text-align: left;">{CUSTOMER_NAME}</td>
                             </tr>
                             <tr>
-                                <th>Delivery Personnel:</th>
-                                <td>dp1</td>
+                                <th style="text-align: left;">Delivery Personnel:</th>
+                                <td style="padding: 0 20px; text-align: left;">{DELIVERY_PERSONNEL}</td>
                             </tr>
                         </table>
                     </div>
-                    <div class="column">
-                        <div class="table-title">Address</div>
+                    <div style="width: 50%;">
+                        <div style="font-size: 1.2rem; font-weight: 700; text-align: left;">Address</div>
                         <table>
                             <tr>
-                                <th>53 Ang Mo Kio Avenue 3
-                                    Singapore 569933</th>
+                                <td style="text-align: left;">{ADDRESS}</td>
                             </tr>
                         </table>
                     </div>
                 </div>
                 <div style="text-align: center;">
-                    <a class="email-btn" href="">{BUTTON_TEXT}</a>
+                    <a class="email-btn" href="{BUTTON_LINK}" style="display: inline-block; border-radius: 10px; border: 3px solid #0071BC; color: #0071BC; padding: 15px; cursor: pointer; text-decoration: none; transition: 0.3s;">{BUTTON_TEXT}</a>
                 </div>
             </div>
         </div>
