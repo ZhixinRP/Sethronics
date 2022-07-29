@@ -10,25 +10,22 @@ function update_dms_table()
         $customer_name = $shipping_data['first_name'] . ' ' . $shipping_data['last_name'];
         $order_address = $shipping_data['address_1'] . ' ' . $shipping_data['address_2'] . ', ' . $shipping_data['country'] . ' ' . $shipping_data['city'] ?: '' . ' ' . $shipping_data['state'] ?: '' . ' ' . $shipping_data['postcode'];
         $results = $wpdb->get_results("SELECT COUNT(order_id) as count FROM " . $table_name . " WHERE order_id = " . $order_id . "");
-        
+
         foreach ($results as $result) {
         }
         if ($result->count == 0) {
             $total_weight = 0.0;
-            foreach ($order->get_items() as $item_key=>$item){
-                $quantity = $item->get_quantity();
-                $product_weight = floatval(return get_metadata( 'post', $item->get_product_id(), '_weights'));
-                $total_weight += $product_weight * $quantity;
-                echo "ID: ";
-                echo $item->get_product_id();
-                echo "Qan:";
-                echo $quantity;
-                echo "Weight:";
-                echo $product_weight;
-
+            foreach ($order->get_items() as $item_key => $item) {
+                // $quantity = $item->get_quantity();
+                // $product_weight = floatval(return get_metadata( 'post', $item->get_product_id(), '_weights'));
+                // $total_weight += $product_weight * $quantity;
+                // echo "ID: ";
+                // echo $item->get_product_id();
+                // echo "Qan:";
+                // echo $quantity;
+                // echo "Weight:";
+                // echo $product_weight;
             }
-
-
             $wpdb->insert("wp_dms_orders", array(
                 "order_id" => $order_id,
                 "customer_name" => $customer_name,
@@ -40,9 +37,9 @@ function update_dms_table()
     }
 }
 
-function get_post_meta( $post_id, $key = '', $single = false ) {
-    return get_metadata( 'post', $post_id, $key, $single );
-}
+// function get_post_meta( $post_id, $key = '', $single = false ) {
+//     return get_metadata( 'post', $post_id, $key, $single );
+// }
 
 function send_email($email_to, $subject)
 {

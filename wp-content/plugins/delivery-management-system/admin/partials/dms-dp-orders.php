@@ -19,7 +19,7 @@ $table_name = $wpdb->prefix . "dms_orders";
 
 if (isset($_POST['accept_order'])) {
     $order_id = $_POST['accept_order'];
-    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 1 WHERE order_id = '$order_id'");
+    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 1, delivery_status = 'In Transit' WHERE order_id = '$order_id'");
     $result = $wpdb->query($sql);
     if ($result) {
         echo "<p id='alert' class='alert alert-success'>Order Accepted</p>";
@@ -53,7 +53,7 @@ if (isset($_POST['reject_order'])) {
     send_email($email_to, $subject, $id, $name, $dp, $address, $type);
 
 
-    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 0, delivery_personnel = '' WHERE order_id = '$order_id'");
+    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 0, delivery_personnel = NULL WHERE order_id = '$order_id'");
     $result = $wpdb->query($sql);
     if ($result) {
         echo "<p id='alert' class='alert alert-success'>Order Rejected</p>";
@@ -217,7 +217,7 @@ if (isset($_POST['update_order'])) {
                             <label class="col-form-label">Delivery Status:</label>
                             <select id="status-type" name="status-type" class="form-control">
                                 <option value="In Transit">In Transit</option>
-                                <option value="Delivered">Delivered</option>
+                                <option value="Delivered" selected>Delivered</option>
                             </select>
                         </div>
                         <div class="form-group col-md">
