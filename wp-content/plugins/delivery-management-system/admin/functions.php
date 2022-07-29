@@ -17,14 +17,14 @@ function update_dms_table()
             $total_weight = 0.0;
             foreach ($order->get_items() as $item_key=>$item){
                 $quantity = $item->get_quantity();
-                $product_weight = floatval(return get_metadata( 'post', $item->get_product_id(), '_weights'));
-                $total_weight += $product_weight * $quantity;
-                echo "ID: ";
-                echo $item->get_product_id();
-                echo "Qan:";
-                echo $quantity;
-                echo "Weight:";
-                echo $product_weight;
+                // $product_weight = floatval(return get_metadata( 'post', $item->get_product_id(), '_weights'));
+                // $total_weight += $product_weight * $quantity;
+                // echo "ID: ";
+                // echo $item->get_product_id();
+                // echo "Qan:";
+                // echo $quantity;
+                // echo "Weight:";
+                // echo $product_weight;
 
             }
 
@@ -40,9 +40,9 @@ function update_dms_table()
     }
 }
 
-function get_post_meta( $post_id, $key = '', $single = false ) {
-    return get_metadata( 'post', $post_id, $key, $single );
-}
+// function get_post_meta( $post_id, $key = '', $single = false ) {
+//     return get_metadata( 'post', $post_id, $key, $single );
+// }
 
 function send_email($email_to, $subject)
 {

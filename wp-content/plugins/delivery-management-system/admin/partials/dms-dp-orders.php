@@ -32,7 +32,7 @@ if (isset($_POST['accept_order'])) {
     $id = $result->order_id;
     $name = $result->customer_name;
     $address = $result->order_address;
-    $dp = $result->delivery_personnel;
+    $dp = $result->delivery_personnel;  
     $email_to = get_bloginfo('admin_email');
     $subject = "DMS Notification";
     $type = "accepted";
@@ -53,7 +53,7 @@ if (isset($_POST['reject_order'])) {
     send_email($email_to, $subject, $id, $name, $dp, $address, $type);
 
 
-    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 0, delivery_personnel = '' WHERE order_id = '$order_id'");
+    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 0, delivery_personnel = NULL WHERE order_id = '$order_id'");
     $result = $wpdb->query($sql);
     if ($result) {
         echo "<p id='alert' class='alert alert-success'>Order Rejected</p>";
