@@ -146,6 +146,13 @@ a:focus {
   border: 1px solid #c3c4c7;
 }
 
+#map {
+  height: 750px;
+  /* The height is 400 pixels */
+  width: 100%;
+  /* The width is the width of the web page */
+}
+
 @media only screen and (max-width: 800px) {
   .title {
     text-align: center;
