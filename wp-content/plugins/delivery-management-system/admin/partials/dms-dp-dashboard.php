@@ -26,5 +26,11 @@
                 <p class="icon-text">Incoming Orders</p>
             </div>
         </a>
+        <a href="admin.php?page=dms_dp_locations">
+            <div class="item">
+                <img class="icon" src="<?php echo esc_url(DMS_PLUGIN_URL . "assets/images/google-maps.png"); ?>" alt="">
+                <p class="icon-text">Order Locations</p>
+            </div>
+        </a>
     </div>
 </div>

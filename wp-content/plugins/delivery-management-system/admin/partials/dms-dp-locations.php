@@ -11,6 +11,14 @@
  * @package    Plugin_Name
  * @subpackage Plugin_Name/admin/partials
  */
+
+
+
+global $wpdb;
+$user = wp_get_current_user();
+$order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND is_accepted = 1 AND ");
+
+
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->

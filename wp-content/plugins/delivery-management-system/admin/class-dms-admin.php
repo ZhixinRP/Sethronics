@@ -118,12 +118,12 @@ class DMS_Admin
 		add_submenu_page('dms_plugin', 'Dashboard', 'Dashboard', 'manage_admin_dashboard', 'dms_plugin', array($this, 'dms_admin_dashboard'));
 		add_submenu_page('dms_plugin', 'DP Manager', 'DP Manager', 'manage_admin_dp', 'dms_admin_dp', array($this, 'dms_admin_dp'));
 		add_submenu_page('dms_plugin', 'Order Manager', 'Order Manager', 'manage_admin_orders', 'dms_admin_orders', array($this, 'dms_admin_orders'));
-		add_submenu_page('dms_plugin', 'Order Location', 'Order Location', 'manage_admin_locations', 'dms_admin_locations', array($this, 'dms_admin_locations'));
 
 		//DELIVERY PERSONNEL SECTION
 		add_menu_page('DMS', 'DMS', 'manage_dp_dashboard', 'dms_plugin_dp', array($this, 'dms_dp_page'), 'dashicons-car', 250);
 		add_submenu_page('dms_plugin_dp', 'Dashboard', 'Dashboard', 'manage_dp_dashboard', 'dms_plugin_dp', array($this, 'dms_dp_dashboard'));
 		add_submenu_page('dms_plugin_dp', 'Orders', 'Orders', 'manage_dp_orders', 'dms_dp_orders', array($this, 'dms_dp_orders'));
+		add_submenu_page('dms_plugin_dp', 'Orders Location', 'Orders Location', 'manage_dp_locations', 'dms_dp_locations', array($this, 'dms_dp_locations'));
 
 		if (current_user_can('administrator')) {
 			remove_menu_page('dms_plugin_dp');
@@ -155,10 +155,6 @@ class DMS_Admin
 	{
 		require_once 'partials/dms-admin-orders.php';
 	}
-	public function dms_admin_locations()
-	{
-		require_once 'partials/dms-admin-locations.php';
-	}
 	public function	dms_dp_page()
 	{
 		require_once 'partials/dms-dp-dashboard.php';
@@ -171,13 +167,8 @@ class DMS_Admin
 	{
 		require_once 'partials/dms-dp-orders.php';
 	}
-
-	public function admin_ajax_request_handle_fn()
+	public function dms_dp_locations()
 	{
-		/**
-		 * 
-		 * Admin Ajax Request Operation Function.
-		 * 
-		 */
+		require_once 'partials/dms-dp-locations.php';
 	}
 }

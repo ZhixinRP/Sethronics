@@ -19,7 +19,7 @@ $table_name = $wpdb->prefix . "dms_orders";
 
 if (isset($_POST['accept_order'])) {
     $order_id = $_POST['accept_order'];
-    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 1, delivery_status = 'In Transit' WHERE order_id = '$order_id'");
+    $sql = $wpdb->prepare("UPDATE $table_name SET delivery_status = 'In Transit' WHERE order_id = '$order_id'");
     $result = $wpdb->query($sql);
     if ($result) {
         echo "<p id='alert' class='alert alert-success'>Order Accepted</p>";
@@ -32,7 +32,7 @@ if (isset($_POST['accept_order'])) {
     $id = $result->order_id;
     $name = $result->customer_name;
     $address = $result->order_address;
-    $dp = $result->delivery_personnel;  
+    $dp = $result->delivery_personnel;
     $email_to = get_bloginfo('admin_email');
     $subject = "DMS Notification";
     $type = "accepted";
@@ -53,7 +53,7 @@ if (isset($_POST['reject_order'])) {
     send_email($email_to, $subject, $id, $name, $dp, $address, $type);
 
 
-    $sql = $wpdb->prepare("UPDATE $table_name SET is_accepted = 0, delivery_personnel = NULL WHERE order_id = '$order_id'");
+    $sql = $wpdb->prepare("UPDATE $table_name SET delivery_personnel = NULL WHERE order_id = '$order_id'");
     $result = $wpdb->query($sql);
     if ($result) {
         echo "<p id='alert' class='alert alert-success'>Order Rejected</p>";
@@ -108,7 +108,7 @@ if (isset($_POST['update_order'])) {
                             <?php
                             global $wpdb;
                             $user = wp_get_current_user();
-                            $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND is_accepted = 0");
+                            $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'Processing'");
                             foreach ($order_list as $index => $data) {
                                 $ol_id = isset($data->order_id) ? $data->order_id : '-';
                                 $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
@@ -158,7 +158,7 @@ if (isset($_POST['update_order'])) {
                             <?php
                             global $wpdb;
                             $user = wp_get_current_user();
-                            $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND is_accepted = 1");
+                            $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'In Transit' OR delivery_status = 'Delivered' ");
                             foreach ($order_list as $index => $data) {
                                 $ol_id = isset($data->order_id) ? $data->order_id : '-';
                                 $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
