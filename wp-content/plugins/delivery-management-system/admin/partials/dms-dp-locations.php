@@ -12,17 +12,37 @@
  * @subpackage Plugin_Name/admin/partials
  */
 
+function geocode($address)
+{
+    // print_r($address);
+    $queryString = http_build_query([
+        'access_key' => '7d28b67a04aab394d16c0ad8066c916f',
+        'query' => $address,
+        'limit' => 1,
+    ]);
+    $ch = curl_init(sprintf('%s?%s', 'http://api.positionstack.com/v1/forward', $queryString));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $json = curl_exec($ch);
+    curl_close($ch);
+    $apiResult = json_decode($json, true);
+    // print_r($apiResult);
+    $formatted_address = $apiResult['data'][0]['label'];
+    $latitude = $apiResult['data'][0]['latitude'];
+    $longitude = $apiResult['data'][0]['longitude'];
+
+    print_r($formatted_address . $latitude . $longitude);
+}
+
 
 
 global $wpdb;
 $user = wp_get_current_user();
 $table_name = $wpdb->prefix . "dms_orders";
 $orders = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'In Transit'");
-
 foreach ($orders as $order) {
-    echo esc_html_e($order->order_address);
+    //call geocode
+    geocode($order->order_address);
 }
-
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
@@ -33,24 +53,6 @@ foreach ($orders as $order) {
     <div id="map"></div>
 </div>
 <script>
-    //call geocode
-    geocode()
-
-    function geocode() {
-        var location = '22 main st boston MA';
-        axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
-            params: {
-                address: location,
-                key: 'AIzaSyD_qKzzCPoC3GTGB2li2YKddgmOXyTBYkY'
-            }
-        }).then(function(response) {
-            console.log(response)
-        }).catch(function(response) {
-            console.log(error)
-        })
-    }
-
-
     // Initialize and add the map
     function initMap() {
         var locations = [
