@@ -44,7 +44,6 @@ class DMS_Activator
 				`customer_name` varchar(20) NOT NULL,
 				`order_address` varchar(50) NOT NULL,
 				`delivery_personnel` varchar(20) DEFAULT NULL,
-				`is_accepted` boolean DEFAULT false,
 				`order_weight` float(5) DEFAULT NULL,
 				`delivery_status` varchar(20) NOT NULL,
 				`delivery_datetime` DATETIME DEFAULT NULL,

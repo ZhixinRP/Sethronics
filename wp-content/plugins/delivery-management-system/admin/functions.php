@@ -20,13 +20,11 @@ function update_dms_table()
                 $weight = get_post_meta( $order_id, '_weight', true);
                 echo $weight;
             }
-
-
             $wpdb->insert("wp_dms_orders", array(
                 "order_id" => $order_id,
                 "customer_name" => $customer_name,
                 "order_address" => $order_address,
-                "delivery_status" => "processing",
+                "delivery_status" => "Processing",
                 "order_weight" => $total_weight,
             ));
         }
