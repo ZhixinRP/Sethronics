@@ -10,15 +10,16 @@ function update_dms_table()
         $customer_name = $shipping_data['first_name'] . ' ' . $shipping_data['last_name'];
         $order_address = $shipping_data['address_1'] . ' ' . $shipping_data['address_2'] . ', ' . $shipping_data['country'] . ' ' . $shipping_data['city'] ?: '' . ' ' . $shipping_data['state'] ?: '' . ' ' . $shipping_data['postcode'];
         $results = $wpdb->get_results("SELECT COUNT(order_id) as count FROM " . $table_name . " WHERE order_id = " . $order_id . "");
-
         foreach ($results as $result) {
         }
         if ($result->count == 0) {
             $total_weight = 0.0;
+            $weight_table = $wpdb->prefix . "wp_postmeta";
             foreach ($order->get_items() as $item_key => $item) {
+                $product_id = $item->get_data()['product_id'];
                 $quantity = $item->get_quantity();
-                $weight = get_post_meta( $order_id, '_weight', true);
-                echo $weight;
+                $weight = get_post_meta( $product_id, '_weight', true);
+                $total_weight += $weight * $quantity;
             }
             $wpdb->insert("wp_dms_orders", array(
                 "order_id" => $order_id,
