@@ -94,7 +94,6 @@ if(isset($_POST['filter_order_btn'])){
             <div class="tab-content <?php echo !isset($_POST['filter_order_btn']) ? 'active' : '' ?>">
                 <div>Select Delivery Personnel:</div>
 
-
                 <form method="post">
 
                 <select class="dropdown mb-4" id="select_dp" name="select_dp">
@@ -108,104 +107,100 @@ if(isset($_POST['filter_order_btn'])){
                 <?php
                 }
                 ?>
-
                 </select>
 
-                <table class="table table-bordered">
-                    <thead class="table-dark table-bordered">
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Customer Name</th>
-                            <th>Address</th>
-                            <th>Weight</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-dark table-bordered">
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Address</th>
+                                <th>Weight</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            global $wpdb;
+                            $table_name = $wpdb->prefix . "dms_orders";
+                            $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel IS NULL OR delivery_personnel = ''");
+                            foreach ($order_list as $index => $data) {
+                                $ol_id = isset($data->order_id) ? $data->order_id : '-';
+                                $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+                                $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
+                                $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
+                            ?>
+                                <tr>
+                                    <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
+                                    <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
+                                    <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
+                                    <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
+                                    <td data-title="Actions" class=""><button type="submit" name="assign_dp_btn" class="btn btn-success assignBtn" value="<?php esc_html_e($ol_id); ?>">Assign</button></td>
+                            <?php
+                            }
+                            ?>
+                                </tr>
+                        </tbody>
+                    </table>
+                </div>
+                </form>
+            </div>
+            <div class="tab-content <?php echo isset($_POST['filter_order_btn']) ? 'active' : '' ?>">
+                <form method="post">
+                    <div id="filters">
+                        <select name="fetchval" id="fetchval" class="dropdown mb-4">
+                            <option selected="" value="all">All</option>
                         <?php
-                        // global $wpdb;
-                        $table_name = $wpdb->prefix . "dms_orders";
-                        $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel IS NULL OR delivery_personnel = ''");
-                        foreach ($order_list as $index => $data) {
-                            $ol_id = isset($data->order_id) ? $data->order_id : '-';
-                            $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
-                            $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
-                            $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
-                            
+                            foreach ($users as $user){
                         ?>
+
+                                <option value=<?php esc_html_e($user->user_login);?>><?php esc_html_e($user->user_login)?> [<?php esc_html_e($user->user_email)?>]</option>
+                    
+                        <?php
+                            }
+                        ?>
+
+                        </select>
+                        <button type="submit" name="filter_order_btn" class="btn btn-info mb-4 filterbtn" onclick="switchToAssign">Filter</button>
+                </form>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-dark table-bordered">
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Order Address</th>
+                                <th>Delivery Personnel</th>
+                                <th>Order Weight</th>
+                                <th>Delivery Status</th>
+                            </tr>
+                        </thead>
+                            <?php 
+                            $order_filter = $wpdb->get_results($sql_filter);
+                            foreach ($order_filter as $index => $data){
+                                $ol_id = isset($data->order_id) ? $data->order_id : '-';
+                                $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+                                $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
+                                $ol_dp = isset($data->delivery_personnel) ? $data->delivery_personnel : '-';
+                                $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
+                                $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
+                            ?>
                             <tr>
                                 <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
                                 <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
                                 <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
-                                <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
-
-                                
-                                
-                                
-                                <td><button type="submit" name="assign_dp_btn" class="btn btn-success assignBtn" value="<?php esc_html_e($ol_id); ?>">Assign</button></td>
-                                
+                                <td data-title="Delivery Personnel"><?php esc_html_e($ol_dp); ?></td>
+                                <td data-title="Order Weight"><?php esc_html_e($ol_weight); ?></td>
+                                <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
+                            </tr>
                             <?php
-                        }
-                            ?>
-                    </form>
-                    </tbody>
-                </table>
-            </div>
-            <div class="tab-content <?php echo isset($_POST['filter_order_btn']) ? 'active' : '' ?>">
-                <form method="post">
-                <div id="filters">
-                    <select name="fetchval" id="fetchval" class="dropdown mb-4">
-                        <option selected="" value="all">All</option>
-                    <?php
-                        foreach ($users as $user){
-                    ?>
-
-                            <option value=<?php esc_html_e($user->user_login);?>><?php esc_html_e($user->user_login)?> [<?php esc_html_e($user->user_email)?>]</option>
-                
-                    <?php
-                        }
-                    ?>
-
-                    </select>
-                    <button type="submit" name="filter_order_btn" class="btn btn-info mb-4 filterbtn" onclick="switchToAssign">Filter</button>
-                </form>
-                <table class="table table-bordered">
-                    <thead class="table-dark table-bordered">
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Customer Name</th>
-                            <th>Order Address</th>
-                            <th>Delivery Personnel</th>
-                            <th>Order Weight</th>
-                            <th>Delivery Status</th>
-                        </tr>
-                    </thead>
-                        <?php 
-                        $order_filter = $wpdb->get_results($sql_filter);
-                        foreach ($order_filter as $index => $data){
-                            $ol_id = isset($data->order_id) ? $data->order_id : '-';
-                            $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
-                            $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
-                            $ol_dp = isset($data->delivery_personnel) ? $data->delivery_personnel : '-';
-                            $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
-                            $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
-                        ?>
-                        <tr>
-                            <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
-                            <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
-                            <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
-                            <td data-title="Delivery Personnel"><?php esc_html_e($ol_dp); ?></td>
-                            <td data-title="Order Weight"><?php esc_html_e($ol_weight); ?></td>
-                            <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
-
-                        </tr>
-
-                        <?php
-                        }
-                        ?>
-                        
-                    </tbody>
-                </table>
+                            }
+                            ?>             
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
         <div class="tab-content">

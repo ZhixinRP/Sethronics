@@ -16,15 +16,9 @@ function update_dms_table()
         if ($result->count == 0) {
             $total_weight = 0.0;
             foreach ($order->get_items() as $item_key => $item) {
-                // $quantity = $item->get_quantity();
-                // $product_weight = floatval(return get_metadata( 'post', $item->get_product_id(), '_weights'));
-                // $total_weight += $product_weight * $quantity;
-                // echo "ID: ";
-                // echo $item->get_product_id();
-                // echo "Qan:";
-                // echo $quantity;
-                // echo "Weight:";
-                // echo $product_weight;
+                $quantity = $item->get_quantity();
+                $weight = get_post_meta( $order_id, '_weight', true);
+                echo $weight;
             }
 
 
