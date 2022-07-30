@@ -18,3 +18,5 @@ Stack trace:
 
 2022-07-30T07:48:45+00:00 CRITICAL Out of memory (allocated 52428800) (tried to allocate 32768 bytes) in C:\xampp\htdocs\Sethtronics\wp-content\plugins\woocommerce\includes\rest-api\Controllers\Version3\class-wc-rest-terms-controller.php on line 652
 
+2022-07-30T08:06:49+00:00 CRITICAL Unclosed '{' on line 126 in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 287
+
