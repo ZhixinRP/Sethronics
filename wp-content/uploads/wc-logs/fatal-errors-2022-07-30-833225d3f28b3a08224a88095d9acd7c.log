@@ -16,3 +16,5 @@ Stack trace:
 #4 {main}
   thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php on line 172
 
+2022-07-30T07:48:45+00:00 CRITICAL Out of memory (allocated 52428800) (tried to allocate 32768 bytes) in C:\xampp\htdocs\Sethtronics\wp-content\plugins\woocommerce\includes\rest-api\Controllers\Version3\class-wc-rest-terms-controller.php on line 652
+

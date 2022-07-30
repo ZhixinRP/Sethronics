@@ -99,7 +99,7 @@ if (isset($_POST['update_order'])) {
                                 <th>Order ID</th>
                                 <th>Customer Name</th>
                                 <th>Address</th>
-                                <th>Weight</th>
+                                <th>Weight(kg)</th>
                                 <th>Delivery Status</th>
                                 <th>Actions</th>
                             </tr>
@@ -147,7 +147,7 @@ if (isset($_POST['update_order'])) {
                                 <th>Order ID</th>
                                 <th>Customer Name</th>
                                 <th>Address</th>
-                                <th>Weight</th>
+                                <th>Weight(kg)</th>
                                 <th>Delivery Status</th>
                                 <th>Delivered Datetime</th>
                                 <th>Delivered Photo Evidence</th>

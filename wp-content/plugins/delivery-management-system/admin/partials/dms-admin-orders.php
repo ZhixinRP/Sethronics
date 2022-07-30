@@ -114,7 +114,7 @@ if (isset($_POST['filter_order_btn'])) {
                                 <th>Order ID</th>
                                 <th>Customer Name</th>
                                 <th>Address</th>
-                                <th>Weight</th>
+                                <th>Weight(kg)</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -170,7 +170,7 @@ if (isset($_POST['filter_order_btn'])) {
                                 <th>Customer Name</th>
                                 <th>Order Address</th>
                                 <th>Delivery Personnel</th>
-                                <th>Order Weight</th>
+                                <th>Weight(kg)</th>
                                 <th>Delivery Status</th>
                             </tr>
                         </thead>
@@ -208,7 +208,7 @@ if (isset($_POST['filter_order_btn'])) {
                         <th>Customer Name</th>
                         <th>Address</th>
                         <th>Delivery Personnel</th>
-                        <th>Weight</th>
+                        <th>Weight(kg)</th>
                         <th>Delivery Status</th>
                         <th>Delivered Datetime</th>
                         <th>Photo</th>
