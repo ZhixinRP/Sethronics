@@ -231,7 +231,7 @@ if (isset($_POST['filter_order_btn_do'])) {
                         </select>
                         <button type="submit" name="filter_order_btn_do" class="btn btn-info mb-4 filterbtn" onclick="switchToAssign">Filter</button>
                 </form>
-                <form method="post" action="dms-export.php">
+                <form method="post" action="admin.php?page=dms_export">
                     <input type="submit" name="export" value="CSV Export" />
                 </form>
             <div class="table-responsive">
