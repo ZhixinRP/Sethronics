@@ -12,6 +12,16 @@
  * @subpackage Plugin_Name/admin/partials
  */
 
+//Empty array to store locations
+$locations = [];
+global $wpdb;
+$user = wp_get_current_user();
+$table_name = $wpdb->prefix . "dms_orders";
+$orders = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'In Transit'");
+foreach ($orders as $order) {
+    //push the array to the locations array
+    array_push($locations, geocode($order->order_address));
+}
 function geocode($address)
 {
     // print_r($address);
@@ -25,66 +35,67 @@ function geocode($address)
     $json = curl_exec($ch);
     curl_close($ch);
     $apiResult = json_decode($json, true);
-    // print_r($apiResult);
+
+    //store extract values from API response
     $formatted_address = $apiResult['data'][0]['label'];
     $latitude = $apiResult['data'][0]['latitude'];
     $longitude = $apiResult['data'][0]['longitude'];
-
-    print_r($formatted_address . $latitude . $longitude);
-}
-
-
-
-global $wpdb;
-$user = wp_get_current_user();
-$table_name = $wpdb->prefix . "dms_orders";
-$orders = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'In Transit'");
-foreach ($orders as $order) {
-    //call geocode
-    geocode($order->order_address);
+    //return all in one location array
+    return array($formatted_address, $latitude, $longitude);
 }
 ?>
+
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <div class="wrap">
     <h1>Order Locations</h1>
-    <!--The div element for the map -->
+    <?php
+    $allData = json_encode($locations);
+    echo '<div id="allData">' . $allData . '</div>';
+    ?>
     <div id="map"></div>
 </div>
-<script>
-    // Initialize and add the map
-    function initMap() {
-        var locations = [
-            ['53 Ang Mo Kio Avenue 3 Singapore 569933', 1.369400, 103.848557],
-            ['Blk 145 Lorong 2 Toa Payoh Singapore 310145', 1.335230, 103.846210],
-        ];
 
-        var map = new google.maps.Map(document.getElementById('map'), {
+<script>
+    var map;
+    var geocoder;
+
+    //load the google map
+    function loadMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
             zoom: 12,
             center: new google.maps.LatLng(1.3521, 103.8198),
             mapTypeId: google.maps.MapTypeId.ROADMAP
         });
 
+        var marker = new google.maps.Marker({
+            map: map
+        });
+
+        //retrieve the locations array 
+        var allData = JSON.parse(document.getElementById('allData').innerHTML);
+        showAllLocations(allData)
+    }
+
+    function showAllLocations(locations) {
         var infowindow = new google.maps.InfoWindow();
-
         var marker, i;
-
         for (i = 0; i < locations.length; i++) {
             marker = new google.maps.Marker({
+                //based on the long and lat show the marker
                 position: new google.maps.LatLng(locations[i][1], locations[i][2]),
                 map: map
             });
 
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
+                    //show the label of location
                     infowindow.setContent(locations[i][0]);
                     infowindow.open(map, marker);
                 }
             })(marker, i));
         }
-
     }
-    window.initMap = initMap;
 </script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7zqC7d3_gVvXTuXoOujvGOA5dT2bhP1s&callback=initMap" defer></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7zqC7d3_gVvXTuXoOujvGOA5dT2bhP1s&callback=loadMap"></script>
