@@ -76,6 +76,56 @@ if (isset($_POST['filter_order_btn_do'])) {
 
 
 
+if(isset($_POST["export"]))
+{
+    global $wpdb;
+    $table_name = $wpdb->prefix . "dms_orders";
+    
+    // header('Content-Type: text/csv; charset=urf-8');
+    // header('Content-Disposition: attachment; filename=Order Data.csv');
+    // $output = fopen("php://output", "w");
+    // fputcsv($output, array('Order ID', 'Customer Name', 'Address', 'Weight', 'Delivery Personnel', 'Delivery Datetime'));
+
+    // $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_status = 'Delivered'");
+    // foreach ($order_list as $index => $data) {
+    //     $ol_id = isset($data->order_id) ? $data->order_id : '-';
+    //     $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+    //     $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
+    //     $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
+    //     $order_array = array($ol_id, $ol_customer_name, $ol_order_address, $ol_weight);
+
+
+    //     fputcsv($output, $order_array);
+    // }
+
+    // fclose($output);
+
+    header('Content-Type: text/csv');
+    header('Content-Disposition: attachment; filename="orderdata.csv"');
+    // $ar=array();
+    // $sql="SHOW COLUMNS FROM $table_name";
+    // $res=$wpdb->get_results($sql);
+    // foreach($res as $row){
+    //     $ar[]=$row->Field;
+    // }
+    // $op=fopen("php://output", "w");  
+    // fputcsv($op,$ar);  
+    // $sql="SELECT * FROM " . $table_name . " WHERE delivery_status = 'Delivered'";
+    // $res=$wpdb->get_results($sql);
+    // if(count($res)){
+    //     foreach($res as $row){
+    //         $row = (array)$row;
+    //         fputcsv($op, $row);  
+    //     }
+    // }
+    // fclose($op);
+    fputcsv();
+    fclose();
+
+}
+
+
+
 
 ?>
 
@@ -231,7 +281,7 @@ if (isset($_POST['filter_order_btn_do'])) {
                         </select>
                         <button type="submit" name="filter_order_btn_do" class="btn btn-info mb-4 filterbtn" onclick="switchToAssign">Filter</button>
                 </form>
-                <form method="post" action="admin.php?page=dms_export">
+                <form method="post">
                     <input type="submit" name="export" value="CSV Export" />
                 </form>
             <div class="table-responsive">
