@@ -138,7 +138,7 @@ if (isset($_POST['edit'])) {
                             echo '</form>';
 
                             echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            echo '<button type="submit" name="delete_dp" class="delete btn btn-danger" value="' . esc_html($dp_user->ID) . '");">Delete</button>';
+                            echo '<button type="submit" name="delete_dp" class="dms-delete btn btn-danger" value="' . esc_html($dp_user->ID) . '");">Delete</button>';
                             echo '</form></td></tr>';
                         }
                         ?>
