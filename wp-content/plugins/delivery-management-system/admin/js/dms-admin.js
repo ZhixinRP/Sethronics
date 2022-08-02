@@ -1,6 +1,6 @@
 jQuery(document).ready(function ($) {
   //Delete User button
-  $('.delete').click(function (e) {
+  $('.dms-delete').click(function (e) {
     if (!confirm('Are you sure you want to delete this user?')) {
       e.preventDefault();
       return false;
