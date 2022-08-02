@@ -13,7 +13,7 @@
     <div id="wrapper" style="font-family: 'Poppins', sans-serif; max-width:650px; margin: auto auto; padding: 20px; color:black;">
         <div id="logo" style="text-align:center;">
             <a href="{SITE_ADDR}" target="_blank">
-                <img src="{EMAIL_LOGO}" alt="logo" style="margin: 15px 0 15px 0; max-height: 75px;">
+                <img src="{EMAIL_LOGO}" style="margin: 15px 0 15px 0; max-height: 75px;">
             </a>
         </div>
         <div id="content" style="text-align:center; padding: 25px; border-radius: 10px; border: 3px solid #0071BC;">

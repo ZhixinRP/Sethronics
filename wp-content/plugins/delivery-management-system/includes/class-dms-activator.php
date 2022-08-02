@@ -43,6 +43,7 @@ class DMS_Activator
 				`order_id` int(5) NOT NULL,
 				`customer_name` varchar(35) NOT NULL,
 				`order_address` varchar(200) NOT NULL,
+				`postal_code` varchar(6) NOT NULL,
 				`delivery_personnel` varchar(20) DEFAULT NULL,
 				`order_weight` float(5) DEFAULT NULL,
 				`delivery_status` varchar(20) NOT NULL,

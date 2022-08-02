@@ -20,26 +20,24 @@ $table_name = $wpdb->prefix . "dms_orders";
 $orders = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'In Transit'");
 foreach ($orders as $order) {
     //push the array to the locations array
-    array_push($locations, geocode($order->order_address));
+    array_push($locations, geocode($order->postal_code));
 }
 function geocode($address)
 {
-    // print_r($address);
     $queryString = http_build_query([
-        'access_key' => '7d28b67a04aab394d16c0ad8066c916f',
-        'query' => $address,
-        'limit' => 1,
+        'searchVal' => $address,
+        'returnGeom' => 'Y',
+        'getAddrDetails' => 'Y'
     ]);
-    $ch = curl_init(sprintf('%s?%s', 'http://api.positionstack.com/v1/forward', $queryString));
+    $ch = curl_init(sprintf('%s&%s', 'https://developers.onemap.sg/commonapi/search?', $queryString));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     $json = curl_exec($ch);
     curl_close($ch);
     $apiResult = json_decode($json, true);
-
     //store extract values from API response
-    $formatted_address = $apiResult['data'][0]['label'];
-    $latitude = $apiResult['data'][0]['latitude'];
-    $longitude = $apiResult['data'][0]['longitude'];
+    $formatted_address = $apiResult['results'][0]['ADDRESS'];
+    $latitude = $apiResult['results'][0]['LATITUDE'];
+    $longitude = $apiResult['results'][0]['LONGITUDE'];
     //return all in one location array
     return array($formatted_address, $latitude, $longitude);
 }
@@ -98,4 +96,4 @@ function geocode($address)
         }
     }
 </script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7zqC7d3_gVvXTuXoOujvGOA5dT2bhP1s&callback=loadMap"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7zqC7d3_gVvXTuXoOujvGOA5dT2bhP1s&callback=loadMap"></script>

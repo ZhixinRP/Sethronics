@@ -34,7 +34,8 @@ if (isset($_POST['accept_order'])) {
     $address = $result->order_address;
     $dp = $result->delivery_personnel;
     $email_to = get_bloginfo('admin_email');
-    $subject = "DMS Notification";
+    $email_to = 'liuzhixin.sg@gmail.com';
+    $subject = "[Sethtronics] DMS Notification";
     $type = "accepted";
     send_email($email_to, $subject, $id, $name, $dp, $address, $type);
 }
@@ -48,7 +49,8 @@ if (isset($_POST['reject_order'])) {
     $address = $result->order_address;
     $dp = $result->delivery_personnel;
     $email_to = get_bloginfo('admin_email');
-    $subject = "DMS Notification";
+    $email_to = 'liuzhixin.sg@gmail.com';
+    $subject = "[Sethtronics] DMS Notification";
     $type = "rejected";
     send_email($email_to, $subject, $id, $name, $dp, $address, $type);
 

@@ -1,0 +1,146 @@
+2022-08-02T15:34:15+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('Jurong West Str...')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 44
+
+2022-08-02T15:35:36+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:44
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 44
+
+2022-08-02T15:39:00+00:00 CRITICAL Uncaught ArgumentCountError: 4 arguments are required, 3 given in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:32
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(32): sprintf('%s?%s?%s', 'https://develop...', 'searchVal=64060...')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#7 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 32
+
+2022-08-02T15:39:42+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 39
+
+2022-08-02T15:40:39+00:00 CRITICAL Uncaught Error: Object of class CurlHandle could not be converted to string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:33
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 33
+
+2022-08-02T15:41:08+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:40
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 40
+
+2022-08-02T15:44:23+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 39
+
+2022-08-02T16:05:01+00:00 CRITICAL Uncaught ValueError: Unknown format specifier "S" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:32
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(32): sprintf('%S?%S', 'https://develop...', 'searchVal=64060...')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#7 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 32
+
+2022-08-02T16:05:13+00:00 CRITICAL Uncaught ArgumentCountError: 5 arguments are required, 3 given in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:32
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(32): sprintf('%s?%s?%s?%s', 'https://develop...', 'searchVal=64060...')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#2 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#6 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#7 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 32
+
+2022-08-02T16:05:23+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 39
+
+2022-08-02T16:06:07+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 39
+
+2022-08-02T16:07:31+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 39
+
+2022-08-02T16:09:35+00:00 CRITICAL Uncaught TypeError: Cannot access offset of type string on string in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php:39
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php(23): geocode('640603')
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(172): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_dp_locations('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_dp...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-dp-locations.php on line 39
+
