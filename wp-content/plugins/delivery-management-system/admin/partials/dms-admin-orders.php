@@ -81,28 +81,28 @@ if(isset($_POST["export"]))
     global $wpdb;
     $table_name = $wpdb->prefix . "dms_orders";
     
-    // header('Content-Type: text/csv; charset=urf-8');
-    // header('Content-Disposition: attachment; filename=Order Data.csv');
-    // $output = fopen("php://output", "w");
-    // fputcsv($output, array('Order ID', 'Customer Name', 'Address', 'Weight', 'Delivery Personnel', 'Delivery Datetime'));
+    header('Content-Type: text/csv; charset=urf-8');
+    header('Content-Disposition: attachment; filename=Order Data.csv');
+    $output = fopen("php://output", "w");
+    fputcsv($output, array('Order ID', 'Customer Name', 'Address', 'Weight', 'Delivery Personnel', 'Delivery Datetime'));
 
-    // $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_status = 'Delivered'");
-    // foreach ($order_list as $index => $data) {
-    //     $ol_id = isset($data->order_id) ? $data->order_id : '-';
-    //     $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
-    //     $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
-    //     $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
-    //     $order_array = array($ol_id, $ol_customer_name, $ol_order_address, $ol_weight);
+    $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_status = 'Delivered'");
+    foreach ($order_list as $index => $data) {
+        $ol_id = isset($data->order_id) ? $data->order_id : '-';
+        $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+        $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
+        $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
+        $order_array = array($ol_id, $ol_customer_name, $ol_order_address, $ol_weight);
 
 
-    //     fputcsv($output, $order_array);
-    // }
+        fputcsv($output, $order_array);
+    }
 
-    // fclose($output);
+    fclose($output);
 
-    header('Content-Type: text/csv');
-    header('Content-Disposition: attachment; filename="orderdata.csv"');
-    // $ar=array();
+    // header('Content-Type: text/csv');
+    // header('Content-Disposition: attachment; filename="orderdata.csv"');
+    // // $ar=array();
     // $sql="SHOW COLUMNS FROM $table_name";
     // $res=$wpdb->get_results($sql);
     // foreach($res as $row){
@@ -119,8 +119,8 @@ if(isset($_POST["export"]))
     //     }
     // }
     // fclose($op);
-    fputcsv();
-    fclose();
+    // fputcsv();
+    // fclose();
 
 }
 
@@ -145,13 +145,13 @@ if(isset($_POST["export"]))
     <div class="title">Order Manager</div>
     <div class="tabs">
         <div class="tab-header pb-3">
-            <div class="tab <?php echo !isset($_POST['filter_order_btn_ao'])  ? ''  : (!isset($_POST['filter_order_btn_do']) ? '' : 'active' );  ?>">Unassigned Orders</div>
+            <div class="tab <?php echo !isset($_POST['filter_order_btn_ao'])  ? 'active'  : (!isset($_POST['filter_order_btn_do']) ? '' : 'active' );  ?>">Unassigned Orders</div>
             <div class="tab <?php echo isset($_POST['filter_order_btn_ao']) ? '' : '' ?>">Active Orders</div>
             <div class="tab <?php echo isset($_POST['filter_order_btn_do']) ? '' : '' ?>">Delivered Orders</div>
         </div>
 
         <div class="tab-body">
-            <div class="tab-content <?php echo !isset($_POST['filter_order_btn_ao'])  ? ''  : (!isset($_POST['filter_order_btn_do']) ? '' : 'active' );  ?>">
+            <div class="tab-content <?php echo !isset($_POST['filter_order_btn_ao'])  ? 'active'  : (!isset($_POST['filter_order_btn_do']) ? '' : 'active' );  ?>">
                 <div>Select Delivery Personnel:</div>
 
                 <form method="post">
@@ -175,7 +175,7 @@ if(isset($_POST["export"]))
                             <thead class="table-dark table-bordered">
                                 <tr>
                                     <th>Order ID</th>
-                                    <th>Customer Name</th>
+                                    <th>Customer Name (Phone No.)</th>
                                     <th>Address</th>
                                     <th>Weight(kg)</th>
                                     <th>Actions</th>
@@ -230,7 +230,7 @@ if(isset($_POST["export"]))
                         <thead class="table-dark table-bordered">
                             <tr>
                                 <th>Order ID</th>
-                                <th>Customer Name</th>
+                                <th>Customer Name (Phone No.)</th>
                                 <th>Order Address</th>
                                 <th>Delivery Personnel</th>
                                 <th>Weight(kg)</th>
@@ -289,7 +289,7 @@ if(isset($_POST["export"]))
                     <thead class="table-dark table-bordered">
                         <tr>
                             <th>Order ID</th>
-                            <th>Customer Name</th>
+                            <th>Customer Name (Phone No.)</th>
                             <th>Address</th>
                             <th>Delivery Personnel</th>
                             <th>Weight(kg)</th>
