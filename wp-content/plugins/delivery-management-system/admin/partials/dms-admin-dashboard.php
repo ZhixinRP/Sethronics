@@ -22,7 +22,7 @@ $user = wp_get_current_user();
 
 <div class="dashboard">
     <h1>Delivery Management System</h1>
-    <h2><?php echo "Welcome, " . $user->user_login ?></h2>
+    <h3><?php echo "Welcome, " . $user->user_login ?></h3>
     <div class="item-container pt-5 text-center">
         <a href="admin.php?page=dms_admin_dp" class="text-decoration-none text-dark">
             <div class="item">

@@ -2,12 +2,13 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 a:active,
 a:focus {
   box-shadow: none;
 }
+
 
 .wrapper {
   margin-top: 30px;
@@ -139,9 +140,6 @@ a:focus {
 }
 
 @media only screen and (max-width: 800px) {
-  .title {
-    text-align: center;
-  }
   .table-responsive {
     font-size: 0.8rem;
   }
@@ -169,7 +167,6 @@ a:focus {
     font-weight: bold;
   }
   .table-responsive tr {
-    /* border-bottom: 5px solid #ccc; */
     margin: 50px 0 50px 0;
   }
   .tabs .tab-header {
@@ -177,9 +174,29 @@ a:focus {
     justify-content: space-between;
   }
   .tabs .tab-header > .tab {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     padding: 0 5px 10px 5px;
   }
+  /* Dashboard */
+  .item-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .item  {
+    margin-top: 20px;
+  }
+
+  .dashboard > h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+
+  .wrapper > h2 {
+    text-align: center;
+  }
+
+
+
 
   .dropdown {
     min-width: 100%;

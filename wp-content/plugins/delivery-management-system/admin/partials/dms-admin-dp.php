@@ -115,36 +115,44 @@ if (isset($_POST['edit'])) {
         </div>
         <div class="tab-body">
             <div class="tab-content <?php echo !isset($_POST['edit_dp']) ? 'active' : '' ?>">
-                <table class="table table-bordered">
-                    <thead class="table-dark table-bordered">
-                        <tr>
-                            <th>User Login</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php
-                        $dp_users = get_users('role=delivery_personnel');
-                        foreach ($dp_users as $dp_user) {
-                            echo '<tr>
-                            <td>' . esc_html($dp_user->user_login) . '</td>
-                            <td>' . esc_html($dp_user->user_nicename) . '</td>
-                            <td>' . esc_html($dp_user->user_email) . '</td>
-                            <td class="d-flex gap-2">';
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead class="table-dark table-bordered">
+                            <tr>
+                                <th>User Login</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            $dp_users = get_users('role=delivery_personnel');
+                            foreach ($dp_users as $dp_user) {
+                                $user_login = esc_html($dp_user->user_login);
+                                $nickname = esc_html($dp_user->user_nicename);
+                                $email = esc_html($dp_user->user_email);
+                            ?>
+                                <tr>
+                                    <td data-title="User Login"><?php echo $user_login ?></td>
+                                    <td data-title="Username"><?php echo $nickname ?></td>
+                                    <td data-title="Email"><?php echo $email ?></td>
+                                    <td data-title="Actions" class="d-flex gap-2">
+                                        <form method="post" action="<?php get_the_permalink() ?>" class="inline-block">
+                                            <button type="submit" name="edit_dp" class="edit btn btn-primary" value="<?php esc_html_e($dp_user->ID) ?>">Edit</button>
+                                        </form>
 
-                            echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            echo '<button type="submit" name="edit_dp" class="edit btn btn-primary" value="' . esc_html($dp_user->ID) . '">Edit</button>';
-                            echo '</form>';
-
-                            echo '<form method="post" action="' . get_the_permalink() . '" class="inline-block">';
-                            echo '<button type="submit" name="delete_dp" class="dms-delete btn btn-danger" value="' . esc_html($dp_user->ID) . '");">Delete</button>';
-                            echo '</form></td></tr>';
-                        }
-                        ?>
-                    </tbody>
-                </table>
+                                        <form method="post" action="<?php get_the_permalink() ?>" class="inline-block">
+                                            <button type="submit" name="delete_dp" class="dms-delete btn btn-danger" value="<?php esc_html_e($dp_user->ID) ?>" );">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            <?php
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <div class="tab-content <?php echo isset($_POST['edit_dp']) ? 'active' : '' ?>">
                 <form method="post" action="<?php echo get_the_permalink(); ?>">
@@ -156,7 +164,7 @@ if (isset($_POST['edit'])) {
                             </tr>
                             <tr>
                                 <th><label>Email Address (required)</label></th>
-                                <td><input name="email" id="email" class="regular-text" type="text" value="<?php echo isset($_POST['edit_dp']) ? $edit_email : '' ?>" required></td>
+                                <td><input name="email" id="email" class="regular-text" type="email" value="<?php echo isset($_POST['edit_dp']) ? $edit_email : '' ?>" required></td>
                             </tr>
                             <tr>
                                 <th><label>First Name (optional)</label></th>

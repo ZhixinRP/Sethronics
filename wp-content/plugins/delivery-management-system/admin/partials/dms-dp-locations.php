@@ -52,7 +52,7 @@ function geocode($address, $id, $name)
 
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <div class="wrapper">
-    <h1>Order Locations</h1>
+    <h2>Order Locations</h2>
     <?php
     $allData = json_encode($locations);
     echo '<h6 id="allData" style="display:none;">' . $allData . '</h6>';
