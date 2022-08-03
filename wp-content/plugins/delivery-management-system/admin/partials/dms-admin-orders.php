@@ -98,29 +98,6 @@ if (isset($_POST["export"])) {
     }
 
     fclose($output);
-
-    // header('Content-Type: text/csv');
-    // header('Content-Disposition: attachment; filename="orderdata.csv"');
-    // // $ar=array();
-    // $sql="SHOW COLUMNS FROM $table_name";
-    // $res=$wpdb->get_results($sql);
-    // foreach($res as $row){
-    //     $ar[]=$row->Field;
-    // }
-    // $op=fopen("php://output", "w");  
-    // fputcsv($op,$ar);  
-    // $sql="SELECT * FROM " . $table_name . " WHERE delivery_status = 'Delivered'";
-    // $res=$wpdb->get_results($sql);
-    // if(count($res)){
-    //     foreach($res as $row){
-    //         $row = (array)$row;
-    //         fputcsv($op, $row);  
-    //     }
-    // }
-    // fclose($op);
-    // fputcsv();
-    // fclose();
-
 }
 
 
