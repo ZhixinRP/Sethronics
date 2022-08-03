@@ -1,0 +1,40 @@
+2022-08-03T10:52:19+00:00 CRITICAL Uncaught Error: Undefined constant "CURLOPT" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:132
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 132
+
+2022-08-03T10:58:41+00:00 CRITICAL Uncaught Error: Undefined constant "CURLOPT" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:132
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 132
+
+2022-08-03T10:58:42+00:00 CRITICAL Uncaught Error: Undefined constant "CURLOPT" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:132
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 132
+
+2022-08-03T10:59:13+00:00 CRITICAL Uncaught Error: Undefined constant "CURLOPT" in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php:132
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once()
+#1 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#5 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php on line 132
+
