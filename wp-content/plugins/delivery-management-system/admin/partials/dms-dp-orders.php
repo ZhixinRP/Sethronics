@@ -99,7 +99,8 @@ if (isset($_POST['update_order'])) {
                         <thead class="table-dark table-bordered">
                             <tr>
                                 <th>Order ID</th>
-                                <th>Customer Name (Phone No.)</th>
+                                <th>Customer Name</th>
+                                <th>Phone No.</th>
                                 <th>Address</th>
                                 <th>Weight(kg)</th>
                                 <th>Delivery Status</th>
@@ -114,6 +115,7 @@ if (isset($_POST['update_order'])) {
                             foreach ($order_list as $index => $data) {
                                 $ol_id = isset($data->order_id) ? $data->order_id : '-';
                                 $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+                                $ol_customer_phone = isset($data->customer_phone) ? $data->customer_phone : '-';
                                 $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
                                 $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
                                 $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
@@ -122,6 +124,7 @@ if (isset($_POST['update_order'])) {
                                 <tr>
                                     <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
                                     <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
+                                    <td data-title="Phone No."><?php esc_html_e($ol_customer_phone); ?></td>
                                     <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
                                     <td data-title="Order Weight"><?php esc_html_e($ol_weight); ?></td>
                                     <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
@@ -147,7 +150,8 @@ if (isset($_POST['update_order'])) {
                         <thead class="table-dark table-bordered">
                             <tr>
                                 <th>Order ID</th>
-                                <th>Customer Name (Phone No.)</th>
+                                <th>Customer Name</th>
+                                <th>Phone No.</th>
                                 <th>Address</th>
                                 <th>Weight(kg)</th>
                                 <th>Delivery Status</th>
@@ -164,6 +168,7 @@ if (isset($_POST['update_order'])) {
                             foreach ($order_list as $index => $data) {
                                 $ol_id = isset($data->order_id) ? $data->order_id : '-';
                                 $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
+                                $ol_customer_phone = isset($data->customer_phone) ? $data->customer_phone : '-';
                                 $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
                                 $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
                                 $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
@@ -173,6 +178,7 @@ if (isset($_POST['update_order'])) {
                                 <tr>
                                     <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
                                     <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
+                                    <td data-title="Phone No."><?php esc_html_e($ol_customer_phone); ?></td>
                                     <td data-title="Address"><?php esc_html_e($ol_order_address); ?></td>
                                     <td data-title="Weight"><?php esc_html_e($ol_weight); ?></td>
                                     <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>

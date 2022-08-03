@@ -41,7 +41,8 @@ class DMS_Activator
 			$orders_table_create = "CREATE TABLE " . $this->wp_dms_orders() . " (
 				`id` int(5) NOT NULL AUTO_INCREMENT,
 				`order_id` int(5) NOT NULL,
-				`customer_name` varchar(35) NOT NULL,
+				`customer_name` varchar(20) NOT NULL,
+				`customer_phone` varchar(15) NOT NULL,
 				`order_address` varchar(200) NOT NULL,
 				`postal_code` varchar(6) NOT NULL,
 				`delivery_personnel` varchar(20) DEFAULT NULL,

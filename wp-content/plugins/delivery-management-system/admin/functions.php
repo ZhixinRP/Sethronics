@@ -9,7 +9,6 @@ function update_dms_table()
         $order_id = $order->id;
         $customer_name = $shipping_data['first_name'] . ' ' . $shipping_data['last_name'];
         $customer_phone = $shipping_data['phone'];
-        $customer_name_phone = $customer_name . ' (' . $customer_phone . ')';
         $order_address = $shipping_data['address_1'] . ' ' . $shipping_data['address_2'] . ', ' . $shipping_data['country'] . ' ' . $shipping_data['postcode'];
         $postal_code = $shipping_data['postcode'];
         $results = $wpdb->get_results("SELECT COUNT(order_id) as count FROM " . $table_name . " WHERE order_id = " . $order_id . "");
@@ -25,7 +24,8 @@ function update_dms_table()
             }
             $wpdb->insert("wp_dms_orders", array(
                 "order_id" => $order_id,
-                "customer_name" => $customer_name_phone,
+                "customer_name" => $customer_name,
+                "customer_phone" => $customer_phone,
                 "order_address" => $order_address,
                 "delivery_status" => "Processing",
                 "order_weight" => $total_weight,
