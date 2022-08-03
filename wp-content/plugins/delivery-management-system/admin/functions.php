@@ -11,7 +11,6 @@ function update_dms_table()
         $customer_phone = $shipping_data['phone'];
         $order_address = $shipping_data['address_1'] . ' ' . $shipping_data['address_2'] . ', ' . $shipping_data['country'] . ' ' . $shipping_data['postcode'];
         $postal_code = $shipping_data['postcode'];
-
         $results = $wpdb->get_results("SELECT COUNT(order_id) as count FROM " . $table_name . " WHERE order_id = " . $order_id . "");
         foreach ($results as $result) {
         }
