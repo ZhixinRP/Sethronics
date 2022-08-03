@@ -20,9 +20,9 @@ $table_name = $wpdb->prefix . "dms_orders";
 $orders = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'In Transit'");
 foreach ($orders as $order) {
     //push the array to the locations array
-    array_push($locations, geocode($order->postal_code));
+    array_push($locations, geocode($order->postal_code, $order->order_id, $order->customer_name));
 }
-function geocode($address)
+function geocode($address, $id, $name)
 {
     $queryString = http_build_query([
         'searchVal' => $address,
@@ -39,18 +39,23 @@ function geocode($address)
     $latitude = $apiResult['results'][0]['LATITUDE'];
     $longitude = $apiResult['results'][0]['LONGITUDE'];
     //return all in one location array
-    return array($formatted_address, $latitude, $longitude);
+    return array($formatted_address, $latitude, $longitude, $id, $name);
 }
 ?>
 
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
+
+<!-- BOOTSTRAP STYLES -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<div class="wrap">
+<div class="wrapper">
     <h1>Order Locations</h1>
     <?php
     $allData = json_encode($locations);
-    echo '<div id="allData">' . $allData . '</div>';
+    echo '<h6 id="allData" style="display:none;">' . $allData . '</h6>';
     ?>
     <div id="map"></div>
 </div>
@@ -89,7 +94,10 @@ function geocode($address)
             google.maps.event.addListener(marker, 'click', (function(marker, i) {
                 return function() {
                     //show the label of location
-                    infowindow.setContent(locations[i][0]);
+                    infowindow.setContent(
+                        `<h6> Order ID: ` + locations[i][3] + `<h6/>
+                        <h6> Customer Name: ` + locations[i][4] + `<h6/>
+                        <h6> Address: ` + locations[i][0] + `<h6/>`);
                     infowindow.open(map, marker);
                 }
             })(marker, i));
@@ -97,3 +105,7 @@ function geocode($address)
     }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC7zqC7d3_gVvXTuXoOujvGOA5dT2bhP1s&callback=loadMap"></script>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
