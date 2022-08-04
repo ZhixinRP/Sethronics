@@ -111,7 +111,6 @@ if (isset($_POST['edit'])) {
         <div class="tab-header">
             <div class="tab <?php echo !isset($_POST['edit_dp']) ? 'active' : '' ?>">Manage Delivery Personnel</div>
             <div class="tab <?php echo isset($_POST['edit_dp']) ? 'active' : '' ?>"><?php echo isset($_POST['edit_dp']) ? 'Edit' : 'Add' ?> Delivery Personnel</div>
-            <div class="tab">Export</div>
         </div>
         <div class="tab-body">
             <div class="tab-content <?php echo !isset($_POST['edit_dp']) ? 'active' : '' ?>">
@@ -191,8 +190,6 @@ if (isset($_POST['edit'])) {
                         </tbody>
                     </table>
                 </form>
-            </div>
-            <div class="tab-content">
             </div>
         </div>
     </div>

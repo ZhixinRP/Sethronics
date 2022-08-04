@@ -132,7 +132,7 @@ if (isset($_POST['update_order'])) {
                                     <td data-title="Payment Rate"><?php esc_html_e($ol_distance); ?></td>
                                     <td data-title="Order Weight"><?php esc_html_e($ol_weight); ?></td>
                                     <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
-                                    <td data-title="Actions" class="d-flex gap-2">
+                                    <td data-title="Actions" class="d-flex gap-2 dp-td">
                                         <form method="post" action="<?php get_the_permalink() ?>" class="inline-block">
                                             <button type="submit" name="accept_order" class="btn btn-success" value="<?php esc_html_e($ol_id) ?>">Accept</button>
                                         </form>

@@ -158,10 +158,13 @@ a:focus {
   }
   .table-responsive tbody td {
     position: relative;
-    padding-left: 45%;
+    padding-left: 55%;
     text-align: right;
     border: none;
     border-bottom: 1px solid #eee;
+  }
+  .table-responsive tbody .dp-td {
+    padding-left: 45%;
   }
   .table-responsive td:before {
     content: attr(data-title);
