@@ -27,7 +27,7 @@ if (isset($_POST['assign_dp_btn'])) {
     $DP_selected = $_POST['select_dp'];
     $order_id = $_POST['assign_dp_btn'];
     if ($DP_selected == 'none') {
-        echo "<p class='alert alert-info'>Please select a valid delivery personnel!</p>";
+        echo "<p id='alert' class='alert alert-info'>Please select a valid delivery personnel!</p>";
     } else {
         $sql = $wpdb->prepare("
         UPDATE $table_name 
@@ -76,11 +76,10 @@ if (isset($_POST['filter_order_btn_do'])) {
 
 
 
-if(isset($_POST["export"]))
-{
+if (isset($_POST["export"])) {
     global $wpdb;
     $table_name = $wpdb->prefix . "dms_orders";
-    
+
     header('Content-Type: text/csv; charset=urf-8');
     header('Content-Disposition: attachment; filename=Order Data.csv');
     $output = fopen("php://output", "w");
@@ -104,30 +103,23 @@ if(isset($_POST["export"]))
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
+
+<!-- BOOTSTRAP STYLES -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
 
-
-<!-- Files for Jquery Ajax filter dropdown list -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-<div class="wrap">
-    <div class="title">Order Manager</div>
+<div class="wrapper">
+    <h2>Order Manager</h2>
     <div class="tabs">
         <div class="tab-header pb-3">
-            <div class="tab <?php echo !isset($_POST['filter_order_btn_ao'])  ? 'active'  : (!isset($_POST['filter_order_btn_do']) ? '' : 'active' );  ?>">Unassigned Orders</div>
-            <div class="tab <?php echo isset($_POST['filter_order_btn_ao']) ? '' : '' ?>">Active Orders</div>
-            <div class="tab <?php echo isset($_POST['filter_order_btn_do']) ? '' : '' ?>">Delivered Orders</div>
+            <div class="tab <?php echo isset($_POST['filter_order_btn_ao'])  ? ''  : (isset($_POST['filter_order_btn_do']) ? '' : 'active');  ?>">Unassigned Orders</div>
+            <div class="tab <?php echo isset($_POST['filter_order_btn_ao']) ? 'active' : '' ?>">Active Orders</div>
+            <div class="tab <?php echo isset($_POST['filter_order_btn_do']) ? 'active' : '' ?>">Delivered Orders</div>
         </div>
-
         <div class="tab-body">
-            <div class="tab-content <?php echo !isset($_POST['filter_order_btn_ao'])  ? 'active'  : (!isset($_POST['filter_order_btn_do']) ? '' : 'active' );  ?>">
-                <div>Select Delivery Personnel:</div>
-
+            <div class="tab-content <?php echo isset($_POST['filter_order_btn_ao'])  ? ''  : (isset($_POST['filter_order_btn_do']) ? '' : 'active');  ?>">
+                <h5>Select Delivery Personnel:</h5>
                 <form method="post">
-
                     <select class="dropdown mb-4" id="select_dp" name="select_dp">
                         <option value="none">Select a delivery personnel</option>
                         <?php
@@ -140,8 +132,6 @@ if(isset($_POST["export"]))
                         }
                         ?>
                     </select>
-
-
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead class="table-dark table-bordered">
@@ -150,7 +140,6 @@ if(isset($_POST["export"]))
                                     <th>Customer Name</th>
                                     <th>Phone No.</th>
                                     <th>Address</th>
-                                    <th>Distance(km)</th>
                                     <th>Weight(kg)</th>
                                     <th>Actions</th>
                                 </tr>
@@ -166,14 +155,12 @@ if(isset($_POST["export"]))
                                     $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
                                     $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
                                     $ol_customer_phone = isset($data->customer_phone) ? $data->customer_phone : '-';
-                                    $ol_distance = isset($data->distance) ? $data->distance : '-';
                                 ?>
                                     <tr>
                                         <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
                                         <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
                                         <td data-title="Phone No."><?php esc_html_e($ol_customer_phone); ?></td>
                                         <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
-                                        <td data-title="Distance"><?php esc_html_e($ol_distance); ?></td>
                                         <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
                                         <td data-title="Actions" class=""><button type="submit" name="assign_dp_btn" class="btn btn-success assignBtn" value="<?php esc_html_e($ol_id); ?>">Assign</button></td>
                                     <?php
@@ -245,26 +232,26 @@ if(isset($_POST["export"]))
             </div>
         </div>
         <div class="tab-content <?php echo isset($_POST['filter_order_btn_do']) ? 'active' : '' ?>">
-                <form method="post">
-                    <div id="filters">
-                        <select name="fetchval_do" id="fetchval_do" class="dropdown mb-4">
-                            <option selected="" value="all">All</option>
-                            <?php
-                            foreach ($users as $user) {
-                            ?>
+            <form method="post">
+                <div id="filters">
+                    <select name="fetchval_do" id="fetchval_do" class="dropdown mb-4">
+                        <option selected="" value="all">All</option>
+                        <?php
+                        foreach ($users as $user) {
+                        ?>
 
-                                <option value=<?php esc_html_e($user->user_login); ?>><?php esc_html_e($user->user_login) ?> [<?php esc_html_e($user->user_email) ?>]</option>
+                            <option value=<?php esc_html_e($user->user_login); ?>><?php esc_html_e($user->user_login) ?> [<?php esc_html_e($user->user_email) ?>]</option>
 
-                            <?php
-                            }
-                            ?>
+                        <?php
+                        }
+                        ?>
 
-                        </select>
-                        <button type="submit" name="filter_order_btn_do" class="btn btn-info mb-4 filterbtn" onclick="switchToAssign">Filter</button>
-                </form>
-                <form method="post">
-                    <input type="submit" name="export" value="CSV Export" />
-                </form>
+                    </select>
+                    <button type="submit" name="filter_order_btn_do" class="btn btn-info mb-4 filterbtn" onclick="switchToAssign">Filter</button>
+            </form>
+            <form method="post">
+                <input type="submit" name="export" value="CSV Export" />
+            </form>
             <div class="table-responsive">
                 <table class="table table-bordered">
                     <thead class="table-dark table-bordered">
@@ -323,8 +310,7 @@ if(isset($_POST["export"]))
         </div>
     </div>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+
 <script type="text/javascript">
     <?php if (isset($_POST['select_dp'])) { ?>
         document.getElementById('select_dp').value = "<?php echo $_POST['select_dp']; ?>";
@@ -334,3 +320,7 @@ if(isset($_POST["export"]))
         document.getElementById('fetchval_ao').value = "<?php echo $_POST['fetchval_ao']; ?>";
     <?php } ?>
 </script>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>

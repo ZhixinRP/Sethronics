@@ -102,6 +102,7 @@ if (isset($_POST['update_order'])) {
                                 <th>Customer Name</th>
                                 <th>Phone No.</th>
                                 <th>Address</th>
+                                <th>Payment rate</th>
                                 <th>Weight(kg)</th>
                                 <th>Delivery Status</th>
                                 <th>Actions</th>
@@ -120,12 +121,15 @@ if (isset($_POST['update_order'])) {
                                 $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
                                 $ol_status = isset($data->delivery_status) ? $data->delivery_status : '-';
                                 $ol_datetime = isset($data->delivery_datetime) ? $data->delivery_datetime : '-';
+                                $ol_distance = isset($data->distance) ? $data->distance : '-';
+
                             ?>
                                 <tr>
                                     <td data-title="Order ID"><?php esc_html_e($ol_id); ?></td>
                                     <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
                                     <td data-title="Phone No."><?php esc_html_e($ol_customer_phone); ?></td>
                                     <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
+                                    <td data-title="Payment Rate"><?php esc_html_e($ol_distance); ?></td>
                                     <td data-title="Order Weight"><?php esc_html_e($ol_weight); ?></td>
                                     <td data-title="Delivery Status"><?php esc_html_e($ol_status); ?></td>
                                     <td data-title="Actions" class="d-flex gap-2">

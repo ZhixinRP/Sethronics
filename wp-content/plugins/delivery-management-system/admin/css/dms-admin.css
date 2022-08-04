@@ -2,22 +2,21 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 a:active,
 a:focus {
   box-shadow: none;
 }
 
-
 .wrapper {
   margin-top: 30px;
   min-height: 85vh;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .dashboard {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   min-height: 88vh;
   display: flex;
   justify-content: center;
@@ -47,7 +46,7 @@ a:focus {
 
 .item {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background-color:#FFFFF0;
+  background-color: #fffff0;
 }
 
 /* TABS */
@@ -139,6 +138,10 @@ a:focus {
   /* The width is the width of the web page */
 }
 
+.filterbtn {
+  height: 2rem;
+}
+
 @media only screen and (max-width: 800px) {
   .table-responsive {
     font-size: 0.8rem;
@@ -182,7 +185,7 @@ a:focus {
     display: flex;
     flex-direction: column;
   }
-  .item  {
+  .item {
     margin-top: 20px;
   }
 
@@ -195,9 +198,6 @@ a:focus {
     text-align: center;
   }
 
-
-
-
   .dropdown {
     min-width: 100%;
     text-align: center;
@@ -205,5 +205,6 @@ a:focus {
 
   .filterbtn {
     width: 100%;
+    height: 2.5rem;
   }
 }
