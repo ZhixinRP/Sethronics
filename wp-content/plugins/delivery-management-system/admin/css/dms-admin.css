@@ -47,7 +47,7 @@ a:focus {
 
 .item {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  background-color:#FFFFF0;
+  background-color:	#F0FFF0;
 }
 
 /* TABS */
@@ -155,7 +155,7 @@ a:focus {
   }
   .table-responsive tbody td {
     position: relative;
-    padding-left: 50%;
+    padding-left: 45%;
     text-align: right;
     border: none;
     border-bottom: 1px solid #eee;
