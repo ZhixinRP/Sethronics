@@ -64,6 +64,11 @@ if (isset($_POST['delete_dp'])) {
     $delete_dp = get_user_by('ID', $_POST['delete_dp']);
     $delete_id =  esc_html($delete_dp->ID);
     wp_delete_user($delete_id);
+    if (!is_wp_error($delete_id)) {
+        echo "<p id='alert' class='alert alert-success'>User Deleted Successfully!</p>";
+    } else {
+        echo "<p id='alert' class='alert alert-danger'>" . $user_id->get_error_message() . "</p>";
+    }
 }
 
 if (isset($_POST['edit'])) {
