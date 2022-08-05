@@ -168,7 +168,7 @@ if (isset($_POST['update_order'])) {
                             <?php
                             global $wpdb;
                             $user = wp_get_current_user();
-                            $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND delivery_status = 'In Transit' OR delivery_status = 'Delivered' ");
+                            $order_list = $wpdb->get_results("SELECT * FROM " . $table_name . " WHERE delivery_personnel='" . $user->user_login . "' AND (delivery_status = 'In Transit' OR delivery_status = 'Delivered') ");
                             foreach ($order_list as $index => $data) {
                                 $ol_id = isset($data->order_id) ? $data->order_id : '-';
                                 $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
