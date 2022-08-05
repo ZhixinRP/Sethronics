@@ -1,0 +1,44 @@
+2022-08-05T13:50:46+00:00 CRITICAL Uncaught Error: Call to undefined function get_data() in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:11
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 11
+
+2022-08-05T13:51:32+00:00 CRITICAL Uncaught Error: Call to a member function get_data() on null in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:9
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 9
+
+2022-08-05T13:51:34+00:00 CRITICAL Uncaught Error: Call to a member function get_data() on null in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:9
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 9
+
+2022-08-05T13:51:36+00:00 CRITICAL Uncaught Error: Call to a member function get_data() on null in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php:9
+Stack trace:
+#0 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\partials\dms-admin-orders.php(15): update_dms_table()
+#1 C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\class-dms-admin.php(156): require_once('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(307): DMS_Admin->dms_admin_orders('')
+#3 C:\xampp\htdocs\Sethtronics\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters('', Array)
+#4 C:\xampp\htdocs\Sethtronics\wp-includes\plugin.php(476): WP_Hook->do_action(Array)
+#5 C:\xampp\htdocs\Sethtronics\wp-admin\admin.php(259): do_action('dms_page_dms_ad...')
+#6 {main}
+  thrown in C:\xampp\htdocs\Sethtronics\wp-content\plugins\delivery-management-system\admin\functions.php on line 9
+

@@ -6,9 +6,10 @@ function update_dms_table()
     $orders = wc_get_orders(array('status' => 'completed'));
     foreach ($orders as $order) {
         $shipping_data = $order->get_data()['shipping'];
+        $billing_data = $order->get_data()['billing'];
         $order_id = $order->id;
         $customer_name = $shipping_data['first_name'] . ' ' . $shipping_data['last_name'];
-        $customer_phone = $shipping_data['phone'];
+        $customer_phone = $billing_data['phone'];
         $order_address = $shipping_data['address_1'] . ' ' . $shipping_data['address_2'] . ', ' . $shipping_data['country'] . ' ' . $shipping_data['postcode'];
         $postal_code = $shipping_data['postcode'];
         $results = $wpdb->get_results("SELECT COUNT(order_id) as count FROM " . $table_name . " WHERE order_id = " . $order_id . "");
@@ -84,7 +85,7 @@ function send_email($email_to, $subject, $id, $name, $dp, $address, $type)
 
 function get_distance($address)
 {
-    // Current Token expires 6th August 2022 6:13 PM UTC, 
+    // Current Token expires 8th August 2022 10:00 AM UTC, 
     
     $ozil_geo = '1.279860,103.844582'; // Ozil Services location: 20 MAXWELL ROAD, #09-17, MAXWELL HOUSE, Singapore 069113
     $end = geocode($address);
@@ -93,7 +94,7 @@ function get_distance($address)
         'start' => $ozil_geo,
         'end' => $end,
         'routeType' => 'drive',
-        'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjkwOTYsInVzZXJfaWQiOjkwOTYsImVtYWlsIjoibGlhbmd6aWthaTExMTFAZ21haWwuY29tIiwiZm9yZXZlciI6ZmFsc2UsImlzcyI6Imh0dHA6XC9cL29tMi5kZmUub25lbWFwLnNnXC9hcGlcL3YyXC91c2VyXC9zZXNzaW9uIiwiaWF0IjoxNjU5NTIxNjI1LCJleHAiOjE2NTk5NTM2MjUsIm5iZiI6MTY1OTUyMTYyNSwianRpIjoiNjdiMjgxMmVhMjljZjI1MmY3OTBjMmQ2YmU2MDY4NjMifQ.6mp1yQbGA0lrxf-vP7AWshSLxHbqLuX8mAEUqPfFU-k'
+        'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjkwOTYsInVzZXJfaWQiOjkwOTYsImVtYWlsIjoibGlhbmd6aWthaTExMTFAZ21haWwuY29tIiwiZm9yZXZlciI6ZmFsc2UsImlzcyI6Imh0dHA6XC9cL29tMi5kZmUub25lbWFwLnNnXC9hcGlcL3YyXC91c2VyXC9zZXNzaW9uIiwiaWF0IjoxNjU5NjY3NTUyLCJleHAiOjE2NjAwOTk1NTIsIm5iZiI6MTY1OTY2NzU1MiwianRpIjoiZGM0ZGJmMmI0ZjdhMjZiNjljNmFjYzQ3NmFiMmVkZDgifQ._yD60AexA1TgXpvyBwrxZa-hydBY3bb_T4HYNdeS5gg'
     ]);
 
     $ch = curl_init();

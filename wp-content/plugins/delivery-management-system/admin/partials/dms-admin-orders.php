@@ -140,6 +140,7 @@ if (isset($_POST["export"])) {
                                     <th>Customer Name</th>
                                     <th>Phone No.</th>
                                     <th>Address</th>
+                                    <th>Distance(km)</th>
                                     <th>Weight(kg)</th>
                                     <th>Actions</th>
                                 </tr>
@@ -153,6 +154,7 @@ if (isset($_POST["export"])) {
                                     $ol_id = isset($data->order_id) ? $data->order_id : '-';
                                     $ol_customer_name = isset($data->customer_name) ? $data->customer_name : '-';
                                     $ol_order_address = isset($data->order_address) ? $data->order_address : '-';
+                                    $ol_distance = isset($data->distance) ? $data->distance : '-';
                                     $ol_weight = isset($data->order_weight) ? $data->order_weight : '-';
                                     $ol_customer_phone = isset($data->customer_phone) ? $data->customer_phone : '-';
                                 ?>
@@ -161,6 +163,7 @@ if (isset($_POST["export"])) {
                                         <td data-title="Customer Name"><?php esc_html_e($ol_customer_name); ?></td>
                                         <td data-title="Phone No."><?php esc_html_e($ol_customer_phone); ?></td>
                                         <td data-title="Order Address"><?php esc_html_e($ol_order_address); ?></td>
+                                        <td data-title="Distance"><?php esc_html_e($ol_distance); ?></td>
                                         <td data-title="Delivery Weight"><?php esc_html_e($ol_weight); ?></td>
                                         <td data-title="Actions" class=""><button type="submit" name="assign_dp_btn" class="btn btn-success assignBtn" value="<?php esc_html_e($ol_id); ?>">Assign</button></td>
                                     <?php

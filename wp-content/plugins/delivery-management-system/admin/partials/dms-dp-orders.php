@@ -102,7 +102,7 @@ if (isset($_POST['update_order'])) {
                                 <th>Customer Name</th>
                                 <th>Phone No.</th>
                                 <th>Address</th>
-                                <th>Payment rate</th>
+                                <th>Distance(km)</th>
                                 <th>Weight(kg)</th>
                                 <th>Delivery Status</th>
                                 <th>Actions</th>
