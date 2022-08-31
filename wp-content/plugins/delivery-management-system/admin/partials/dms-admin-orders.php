@@ -118,20 +118,21 @@ if (isset($_POST["export"])) {
         </div>
         <div class="tab-body">
             <div class="tab-content <?php echo isset($_POST['filter_order_btn_ao'])  ? ''  : (isset($_POST['filter_order_btn_do']) ? '' : 'active');  ?>">
-                <h5>Select Delivery Personnel:</h5>
                 <form method="post">
-                    <select class="dropdown mb-4" id="select_dp" name="select_dp">
-                        <option value="none">Select a delivery personnel</option>
-                        <?php
-                        foreach ($users as $user) {
-                        ?>
+                    <h5 class="mb-4">Select Delivery Personnel:
+                        <select class="dropdown" id="select_dp" name="select_dp">
+                            <option value="none">Select a delivery personnel</option>
+                            <?php
+                            foreach ($users as $user) {
+                            ?>
 
-                            <option value=<?php esc_html_e($user->user_login); ?>><?php esc_html_e($user->user_login) ?> [<?php esc_html_e($user->user_email) ?>]</option>
+                                <option value=<?php esc_html_e($user->user_login); ?>><?php esc_html_e($user->user_login) ?> [<?php esc_html_e($user->user_email) ?>]</option>
 
-                        <?php
-                        }
-                        ?>
-                    </select>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </h5>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <thead class="table-dark table-bordered">
@@ -253,7 +254,7 @@ if (isset($_POST["export"])) {
                     <button type="submit" name="filter_order_btn_do" class="btn btn-info mb-4 filterbtn" onclick="switchToAssign">Filter</button>
             </form>
             <form method="post">
-                <input type="submit" name="export" value="CSV Export" />
+                <input class="mb-4" type="submit" name="export" value="CSV Export" />
             </form>
             <div class="table-responsive">
                 <table class="table table-bordered">

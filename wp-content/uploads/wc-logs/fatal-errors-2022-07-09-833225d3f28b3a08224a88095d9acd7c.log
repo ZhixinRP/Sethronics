@@ -1,2 +1,0 @@
-2022-07-09T15:30:28+00:00 CRITICAL Out of memory (allocated 6291456) (tried to allocate 20480 bytes) in C:\xampp\htdocs\Sethtronics\wp-includes\rest-api\class-wp-rest-server.php on line 788
-

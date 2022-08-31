@@ -139,7 +139,12 @@ a:focus {
 }
 
 .filterbtn {
-  height: 2rem;
+  padding: 10px;
+}
+
+.do-flex {
+  display: flex;
+  
 }
 
 @media only screen and (max-width: 800px) {

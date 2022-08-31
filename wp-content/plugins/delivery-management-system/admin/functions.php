@@ -23,7 +23,7 @@ function update_dms_table()
                 $weight = get_post_meta($product_id, '_weight', true);
                 $total_weight += $weight * $quantity;
             }
-            $distance = round((get_distance($postal_code)/1000), 1);
+            $distance = round((get_distance($postal_code) / 1000), 1);
             $wpdb->insert("wp_dms_orders", array(
                 "order_id" => $order_id,
                 "customer_name" => $customer_name,
@@ -86,7 +86,7 @@ function send_email($email_to, $subject, $id, $name, $dp, $address, $type)
 function get_distance($address)
 {
     // Current Token expires 8th August 2022 10:00 AM UTC, 
-    
+
     $ozil_geo = '1.279860,103.844582'; // Ozil Services location: 20 MAXWELL ROAD, #09-17, MAXWELL HOUSE, Singapore 069113
     $end = geocode($address);
 
@@ -94,7 +94,7 @@ function get_distance($address)
         'start' => $ozil_geo,
         'end' => $end,
         'routeType' => 'drive',
-        'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjkwOTYsInVzZXJfaWQiOjkwOTYsImVtYWlsIjoibGlhbmd6aWthaTExMTFAZ21haWwuY29tIiwiZm9yZXZlciI6ZmFsc2UsImlzcyI6Imh0dHA6XC9cL29tMi5kZmUub25lbWFwLnNnXC9hcGlcL3YyXC91c2VyXC9zZXNzaW9uIiwiaWF0IjoxNjU5NjY3NTUyLCJleHAiOjE2NjAwOTk1NTIsIm5iZiI6MTY1OTY2NzU1MiwianRpIjoiZGM0ZGJmMmI0ZjdhMjZiNjljNmFjYzQ3NmFiMmVkZDgifQ._yD60AexA1TgXpvyBwrxZa-hydBY3bb_T4HYNdeS5gg'
+        'token' => 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOjkxNzUsInVzZXJfaWQiOjkxNzUsImVtYWlsIjoibGl1emhpeGluLnNnQGdtYWlsLmNvbSIsImZvcmV2ZXIiOmZhbHNlLCJpc3MiOiJodHRwOlwvXC9vbTIuZGZlLm9uZW1hcC5zZ1wvYXBpXC92MlwvdXNlclwvc2Vzc2lvbiIsImlhdCI6MTY2MTk0ODg5NywiZXhwIjoxNjYyMzgwODk3LCJuYmYiOjE2NjE5NDg4OTcsImp0aSI6ImE2YjBiZTFhZmNmNjMzOTMyMzFkZDExNDdjM2MyNzc3In0.JlvmMdrwKOF1MVdf0gCdnA9TcT8XDflUUmDrV-HRinQ'
     ]);
 
     $ch = curl_init();
@@ -106,16 +106,13 @@ function get_distance($address)
 
     $resp = curl_exec($ch);
 
-    if($e = curl_error($ch)) {
+    if ($e = curl_error($ch)) {
         echo $e;
-    }
-    else {
+    } else {
         $decoded = json_decode($resp, true);
-        return($decoded['route_summary']['total_distance']);
+        return ($decoded['route_summary']['total_distance']);
     }
     curl_close($ch);
-
-
 }
 
 function geocode($address)
@@ -134,7 +131,6 @@ function geocode($address)
     $latitude = $apiResult['results'][0]['LATITUDE'];
     $longitude = $apiResult['results'][0]['LONGITUDE'];
     $latlong = $latitude . ',' . $longitude;
-    
+
     return $latlong;
 }
-

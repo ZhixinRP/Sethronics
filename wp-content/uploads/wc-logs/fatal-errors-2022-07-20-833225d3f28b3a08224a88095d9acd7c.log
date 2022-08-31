@@ -1,4 +1,0 @@
-2022-07-20T06:32:03+00:00 CRITICAL Class 'Automattic\WooCommerce\Blocks\BlockTypes\FeaturedItem' not found in C:\xampp\htdocs\Sethtronics\wp-content\plugins\woocommerce\packages\woocommerce-blocks\src\BlockTypes\FeaturedCategory.php on line 7
-
-2022-07-20T06:38:38+00:00 CRITICAL syntax error, unexpected ')' in C:\xampp\htdocs\Sethtronics\wp-content\plugins\dwp-courier-delivery-management\admin\partials\tmpl-admin-dashboard.php on line 84
-
